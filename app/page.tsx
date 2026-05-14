@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react';
 import { About } from '@/components/About';
 import { ConfidentialDisclaimer } from '@/components/ConfidentialDisclaimer';
 import { Contact } from '@/components/Contact';
+import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
 import { Projects } from '@/components/Projects';
 import { Skills } from '@/components/Skills';
+import { WhatICanBuild } from '@/components/WhatICanBuild';
 import { dictionary, type Locale } from '@/data/dictionary';
 
 export default function Home() {
@@ -36,8 +38,10 @@ export default function Home() {
         <Hero t={t.hero} theme={theme} />
         <About t={t.about} theme={theme} />
         <Skills t={t.skills} theme={theme} />
-        <Projects t={t.projects} locale={locale} theme={theme} />
+        <ExperienceTimeline t={t.experience} locale={locale} theme={theme} />
         <ConfidentialDisclaimer t={t.disclaimer} theme={theme} />
+        <Projects t={t.projects} locale={locale} theme={theme} />
+        <WhatICanBuild t={t.build} locale={locale} theme={theme} />
         <Contact t={t.contact} theme={theme} />
         <footer className={isDark ? 'px-4 py-8 text-center text-sm text-slate-400' : 'px-4 py-8 text-center text-sm text-slate-600'}>
           © 2026 Zulfikar Airlangga Siswanto. {t.footer}
