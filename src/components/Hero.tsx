@@ -1,0 +1,66 @@
+import Image from 'next/image';
+import zulfikarPhoto from '../../app/ZulfikarPhoto.jpeg';
+
+type HeroText = {
+  badge: string;
+  name: string;
+  headline: string;
+  description: string;
+  viewProjects: string;
+  contactMe: string;
+  role: string;
+  focus: string;
+};
+
+export function Hero({ t, theme }: { t: HeroText; theme: 'dark' | 'light' }) {
+  const isDark = theme === 'dark';
+
+  return (
+    <section id="home" className="relative overflow-hidden px-4 pt-36 sm:pt-44">
+      <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/25 blur-3xl" />
+      <div className="mx-auto grid max-w-6xl items-center gap-12 pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:pb-32">
+        <div className="relative z-10">
+          <p className={isDark ? 'mb-5 inline-flex rounded-full border border-violet-300/20 bg-violet-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-violet-100' : 'mb-5 inline-flex rounded-full border border-violet-300/50 bg-violet-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-violet-700'}>
+            {t.badge}
+          </p>
+          <p className={isDark ? 'mb-4 text-lg font-black text-cyan-200 sm:text-xl' : 'mb-4 text-lg font-black text-cyan-700 sm:text-xl'}>
+            {t.name}
+          </p>
+          <h1 className={isDark ? 'max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.07em] text-white sm:text-6xl lg:text-7xl' : 'max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-7xl'}>
+            {t.headline}
+          </h1>
+          <p className={isDark ? 'mt-7 max-w-2xl text-lg leading-8 text-slate-300' : 'mt-7 max-w-2xl text-lg leading-8 text-slate-700'}>
+            {t.description}
+          </p>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a id="view-projects-button" href="#projects" className="group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-500 px-6 py-4 font-black text-slate-950 shadow-2xl shadow-cyan-500/20 transition hover:-translate-y-1 hover:shadow-cyan-400/30">
+              {t.viewProjects}
+              <span className="ml-2 transition group-hover:translate-x-1">→</span>
+            </a>
+            <a id="contact-me-button" href="#contact" className={isDark ? 'inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/80 px-6 py-4 font-bold text-slate-950 backdrop-blur transition hover:-translate-y-1 hover:bg-white'}>
+              {t.contactMe}
+            </a>
+          </div>
+        </div>
+
+        <aside className={isDark ? 'relative z-10 rounded-[2rem] border border-white/10 bg-white/[0.07] p-5 shadow-2xl shadow-black/30 backdrop-blur-xl transition hover:-translate-y-2 sm:p-7' : 'relative z-10 rounded-[2rem] border border-slate-200 bg-white/70 p-5 shadow-2xl shadow-slate-300/50 backdrop-blur-xl transition hover:-translate-y-2 sm:p-7'}>
+          <div className="rounded-[1.5rem] bg-gradient-to-br from-cyan-300/20 via-violet-400/20 to-amber-300/10 p-4 sm:p-6">
+            <div className={isDark ? 'relative h-72 overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-950/45' : 'relative h-72 overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white/60'}>
+              <Image src={zulfikarPhoto} alt="Zulfikar Airlangga Siswanto" fill priority sizes="(max-width: 1024px) 90vw, 360px" className="object-cover" />
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <div className={isDark ? 'rounded-2xl border border-white/10 bg-white/10 p-4' : 'rounded-2xl border border-slate-200 bg-white/70 p-4'}>
+                <strong className={isDark ? 'block text-2xl text-white' : 'block text-2xl text-slate-950'}>Zul</strong>
+                <span className={isDark ? 'text-sm text-slate-300' : 'text-sm text-slate-600'}>Developer</span>
+              </div>
+              <div className={isDark ? 'rounded-2xl border border-white/10 bg-white/10 p-4' : 'rounded-2xl border border-slate-200 bg-white/70 p-4'}>
+                <strong className={isDark ? 'block text-2xl text-cyan-200' : 'block text-2xl text-cyan-700'}>{t.role}</strong>
+                <span className={isDark ? 'text-sm text-slate-300' : 'text-sm text-slate-600'}>{t.focus}</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
