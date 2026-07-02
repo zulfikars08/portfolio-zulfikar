@@ -4,6 +4,8 @@ export type CaseStudy = {
   title: string;
   type: string;
   summary: string;
+  liveUrl?: string;
+  githubUrl?: string;
   problem: string;
   solution: string;
   role: string;
@@ -17,6 +19,39 @@ export type CaseStudy = {
 
 export const projects = {
   en: [
+    {
+      title: 'Mini ERP Invoicing System',
+      type: 'Portfolio Project',
+      summary:
+        'A full-stack invoicing and customer management system built with Next.js, NestJS, Prisma, and PostgreSQL. The system includes JWT authentication, customer management, invoice creation with multiple items, invoice status tracking, dashboard analytics, IDR currency formatting, revenue trend visualization, invoice status chart, top customers table, recent invoices, and Swagger API documentation.',
+      liveUrl: 'https://mini-erp-invoicing.vercel.app',
+      githubUrl: 'https://github.com/zulfikars08/mini-erp-invoicing',
+      problem:
+        'Small business invoicing needs structured customer data, invoice status tracking, and financial summaries without manual spreadsheets.',
+      solution:
+        'Built a full-stack Mini ERP with JWT authentication, REST API, invoice/customer modules, dashboard analytics, charts, tables, and Swagger API documentation.',
+      role: 'Full Stack Developer responsible for frontend, backend API, database modeling, authentication, dashboard analytics, and deployment.',
+      techStack: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'JWT', 'REST API', 'Swagger', 'Vercel'],
+      keyFeatures: [
+        'Login authentication',
+        'Customer management',
+        'Invoice creation with multiple items',
+        'Invoice status management: Draft, Sent, Paid, Cancelled, Overdue',
+        'Dashboard summary',
+        'Revenue trend chart',
+        'Invoice status chart',
+        'Top customers table',
+        'Recent invoices table',
+        'IDR currency format',
+        'Swagger API documentation',
+      ],
+      impact:
+        'Shows a deployed full-stack ERP workflow with clear invoice lifecycle, financial dashboard, and production-ready REST API documentation.',
+      confidentiality:
+        'No credentials, environment variables, or private customer data are exposed.',
+      categories: ['web', 'backend', 'erp', 'saas'],
+      workflow: ['Login', 'Manage Customers', 'Create Invoice', 'Review Dashboard'],
+    },
     {
       title: 'Modular ERP & Operations Platform',
       type: 'Confidential Company Project',
@@ -140,6 +175,39 @@ export const projects = {
     },
   ],
   id: [
+    {
+      title: 'Mini ERP Invoicing System',
+      type: 'Proyek Portfolio',
+      summary:
+        'A full-stack invoicing and customer management system built with Next.js, NestJS, Prisma, and PostgreSQL. The system includes JWT authentication, customer management, invoice creation with multiple items, invoice status tracking, dashboard analytics, IDR currency formatting, revenue trend visualization, invoice status chart, top customers table, recent invoices, and Swagger API documentation.',
+      liveUrl: 'https://mini-erp-invoicing.vercel.app',
+      githubUrl: 'https://github.com/zulfikars08/mini-erp-invoicing',
+      problem:
+        'Kebutuhan invoicing bisnis kecil membutuhkan data customer terstruktur, tracking status invoice, dan ringkasan finansial tanpa spreadsheet manual.',
+      solution:
+        'Membangun Mini ERP full-stack dengan JWT authentication, REST API, modul invoice/customer, dashboard analytics, chart, table, dan Swagger API documentation.',
+      role: 'Full Stack Developer yang bertanggung jawab pada frontend, backend API, database modeling, authentication, dashboard analytics, dan deployment.',
+      techStack: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'JWT', 'REST API', 'Swagger', 'Vercel'],
+      keyFeatures: [
+        'Login authentication',
+        'Customer management',
+        'Invoice creation with multiple items',
+        'Invoice status management: Draft, Sent, Paid, Cancelled, Overdue',
+        'Dashboard summary',
+        'Revenue trend chart',
+        'Invoice status chart',
+        'Top customers table',
+        'Recent invoices table',
+        'IDR currency format',
+        'Swagger API documentation',
+      ],
+      impact:
+        'Menampilkan workflow ERP full-stack yang sudah online dengan lifecycle invoice, dashboard finansial, dan dokumentasi REST API production-ready.',
+      confidentiality:
+        'Tidak ada credentials, environment variables, atau data customer privat yang dibuka.',
+      categories: ['web', 'backend', 'erp', 'saas'],
+      workflow: ['Login', 'Kelola Customer', 'Buat Invoice', 'Review Dashboard'],
+    },
     {
       title: 'Platform ERP & Operasional Modular',
       type: 'Proyek Perusahaan Rahasia',

@@ -3,32 +3,36 @@ export const experience = {
     {
       role: 'Programmer',
       company: 'CV Seven Smarts Indonesia',
-      period: 'Dec 2025 – Present',
-      stack: ['Laravel', 'Flutter', 'Next.js', 'PostgreSQL', 'AWS S3', 'AWS Cognito'],
-      focus: 'Internal business systems, APIs, mobile apps, storage, authentication, dashboard/admin panels, and operational workflows.',
+      period: 'Dec 2025 – Jun 2026',
+      stack: ['Laravel', 'PHP', 'Flutter', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'AWS S3', 'AWS Cognito', 'Bootstrap'],
+      focus:
+        'Developed and maintained integrated web and mobile applications for internal business operations, including sales management, master data, pricing systems, admin dashboards, web portal APIs, and mobile app features. Built and improved backend REST APIs using Laravel and PHP, managed database structures with MySQL and PostgreSQL, developed frontend integrations using Next.js, JavaScript, HTML, CSS, and Bootstrap, and contributed to Flutter mobile app features. Also supported AWS S3 file storage, AWS Cognito authentication-related functionality, debugging, maintenance, and business workflow improvements.',
     },
     {
       role: 'Full Stack Developer Intern',
       company: 'PT Menara Astra',
       period: '2022 – 2023',
-      stack: ['Angular', 'HTML', 'CSS', 'JavaScript'],
-      focus: 'Frontend development, code review, pair programming, collaborative projects, and implementation of UI features in a team environment.',
+      stack: ['Laravel', 'MySQL', 'Angular', 'HTML', 'CSS', 'JavaScript', 'Postman', 'Git', 'GitHub'],
+      focus:
+        'Contributed as a Full Stack Developer Intern in Astra Property’s IT and Digitalization Division, supporting web application and internal system development. Worked on Laravel and MySQL-based web portal APIs, assisted frontend development using Angular, HTML, CSS, and JavaScript, tested API endpoints with Postman, used Git/GitHub for collaboration, and participated in code reviews, pair programming, debugging, and feature enhancement.',
     },
   ],
   id: [
     {
       role: 'Programmer',
       company: 'CV Seven Smarts Indonesia',
-      period: 'Des 2025 – Sekarang',
-      stack: ['Laravel', 'Flutter', 'Next.js', 'PostgreSQL', 'AWS S3', 'AWS Cognito'],
-      focus: 'Sistem bisnis internal, API, aplikasi mobile, storage, authentication, dashboard/admin panel, dan workflow operasional.',
+      period: 'Des 2025 – Jun 2026',
+      stack: ['Laravel', 'PHP', 'Flutter', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'AWS S3', 'AWS Cognito', 'Bootstrap'],
+      focus:
+        'Mengembangkan dan memelihara aplikasi web dan mobile terintegrasi untuk operasional bisnis internal, termasuk sales management, master data, pricing system, admin dashboard, web portal API, dan fitur mobile app. Membangun dan meningkatkan backend REST API menggunakan Laravel dan PHP, mengelola struktur database dengan MySQL dan PostgreSQL, mengembangkan integrasi frontend menggunakan Next.js, JavaScript, HTML, CSS, dan Bootstrap, serta berkontribusi pada fitur mobile app Flutter. Juga mendukung AWS S3 file storage, fungsi terkait AWS Cognito authentication, debugging, maintenance, dan peningkatan workflow bisnis.',
     },
     {
       role: 'Full Stack Developer Intern',
       company: 'PT Menara Astra',
       period: '2022 – 2023',
-      stack: ['Angular', 'HTML', 'CSS', 'JavaScript'],
-      focus: 'Frontend development, code review, pair programming, project kolaboratif, dan implementasi fitur UI dalam lingkungan tim.',
+      stack: ['Laravel', 'MySQL', 'Angular', 'HTML', 'CSS', 'JavaScript', 'Postman', 'Git', 'GitHub'],
+      focus:
+        'Berkontribusi sebagai Full Stack Developer Intern di Astra Property IT and Digitalization Division untuk pengembangan aplikasi web dan sistem internal. Mengerjakan web portal API berbasis Laravel dan MySQL, membantu frontend development menggunakan Angular, HTML, CSS, dan JavaScript, menguji API endpoint dengan Postman, menggunakan Git/GitHub untuk kolaborasi, serta mengikuti code review, pair programming, debugging, dan feature enhancement.',
     },
   ],
 } as const;

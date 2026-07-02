@@ -90,19 +90,43 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
                     <h3 className={isDark ? 'text-2xl font-black tracking-[-0.03em] text-white' : 'text-2xl font-black tracking-[-0.03em] text-slate-950'}>{project.title}</h3>
                     <p className={isDark ? 'mt-4 leading-7 text-slate-300' : 'mt-4 leading-7 text-slate-700'}>{project.summary}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
-                      {project.techStack.slice(0, 6).map((tech) => (
+                      {project.techStack.map((tech) => (
                         <span key={tech} className={isDark ? 'rounded-full bg-white/10 px-3 py-2 text-xs font-bold text-slate-100' : 'rounded-full bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700'}>{tech}</span>
                       ))}
                     </div>
-                    <button
-                      id={`case-study-${index + 1}-button`}
-                      type="button"
-                      onClick={() => setOpenProject(isOpen ? null : project.title)}
-                      className="mt-7 inline-flex rounded-2xl bg-gradient-to-r from-cyan-300 to-violet-400 px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1"
-                      aria-expanded={isOpen}
-                    >
-                      {isOpen ? t.hideCaseStudy : t.viewCaseStudy}
-                    </button>
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      {project.liveUrl ? (
+                        <a
+                          id={`live-demo-${index + 1}-link`}
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex rounded-2xl bg-gradient-to-r from-cyan-300 to-violet-400 px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1"
+                        >
+                          Live Demo
+                        </a>
+                      ) : null}
+                      {project.githubUrl ? (
+                        <a
+                          id={`github-${index + 1}-link`}
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-slate-50'}
+                        >
+                          GitHub
+                        </a>
+                      ) : null}
+                      <button
+                        id={`case-study-${index + 1}-button`}
+                        type="button"
+                        onClick={() => setOpenProject(isOpen ? null : project.title)}
+                        className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-slate-50'}
+                        aria-expanded={isOpen}
+                      >
+                        {isOpen ? t.hideCaseStudy : t.viewCaseStudy}
+                      </button>
+                    </div>
                   </div>
                 </div>
 
