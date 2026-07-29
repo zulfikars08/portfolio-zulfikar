@@ -44,6 +44,9 @@ export const dictionary = {
       filters: { all: 'All', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Academic' },
       viewCaseStudy: 'View Case Study',
       hideCaseStudy: 'Hide Case Study',
+      liveDemo: 'Live Demo',
+      frontendGithub: 'Frontend GitHub',
+      backendGithub: 'Backend GitHub',
       labels: {
         overview: 'Overview',
         problem: 'Problem',
@@ -139,6 +142,9 @@ export const dictionary = {
       filters: { all: 'Semua', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Akademik' },
       viewCaseStudy: 'Lihat Studi Kasus',
       hideCaseStudy: 'Tutup Studi Kasus',
+      liveDemo: 'Lihat Demo',
+      frontendGithub: 'GitHub Frontend',
+      backendGithub: 'GitHub Backend',
       labels: {
         overview: 'Ringkasan',
         problem: 'Masalah',

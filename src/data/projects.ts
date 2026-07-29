@@ -6,6 +6,7 @@ export type CaseStudy = {
   summary: string;
   liveUrl?: string;
   githubUrl?: string;
+  backendGithubUrl?: string;
   problem: string;
   solution: string;
   role: string;
@@ -19,6 +20,23 @@ export type CaseStudy = {
 
 export const projects = {
   en: [
+    {
+      title: 'Article Management System',
+      type: 'Portfolio Project',
+      summary: 'A full-stack article management system with separate Vue.js frontend and Go REST API repositories. It supports creating, editing, publishing, drafting, previewing, paginating, and soft-deleting articles.',
+      liveUrl: 'https://sharing-vision-frontend-silk.vercel.app/',
+      githubUrl: 'https://github.com/zulfikars08/sharing-vision-frontend',
+      backendGithubUrl: 'https://github.com/zulfikars08/sharing-vision-backend',
+      problem: 'Editorial teams need a simple workflow to manage article drafts, published content, and trashed posts without mixing presentation and data concerns.',
+      solution: 'Built a Vue 3 CMS connected to a Go and Chi REST API with MySQL persistence, input validation, status filtering, pagination, soft deletion, and deployment-ready configuration.',
+      role: 'Full Stack Developer responsible for frontend, REST API, database schema, validation, testing, CI, documentation, and deployment.',
+      techStack: ['Vue 3', 'TypeScript', 'Vite', 'Tailwind CSS', 'Axios', 'Go', 'Chi', 'MySQL', 'REST API', 'Vercel'],
+      keyFeatures: ['Article creation and editing', 'Publish and draft workflow', 'Published article preview', 'Status filtering', 'Pagination', 'Soft delete', 'Input validation', 'Responsive CMS interface'],
+      impact: 'Demonstrates a deployed full-stack CMS with clean frontend/backend separation, tested API behavior, and production-ready repository documentation.',
+      confidentiality: 'Public portfolio project. Source code is available in separate frontend and backend GitHub repositories.',
+      categories: ['web', 'backend'],
+      workflow: ['Create Article', 'Save Draft / Publish', 'Manage Posts', 'Preview Published Content'],
+    },
     {
       title: 'Mini ERP Invoicing System',
       type: 'Portfolio Project',
@@ -176,37 +194,54 @@ export const projects = {
   ],
   id: [
     {
+      title: 'Sistem Manajemen Artikel',
+      type: 'Proyek Portofolio',
+      summary: 'Sistem manajemen artikel full-stack dengan repository frontend Vue.js dan REST API Go yang terpisah. Sistem mendukung pembuatan, pengeditan, publikasi, penyimpanan draf, pratinjau, paginasi, dan penghapusan lunak artikel.',
+      liveUrl: 'https://sharing-vision-frontend-silk.vercel.app/',
+      githubUrl: 'https://github.com/zulfikars08/sharing-vision-frontend',
+      backendGithubUrl: 'https://github.com/zulfikars08/sharing-vision-backend',
+      problem: 'Tim editorial membutuhkan alur sederhana untuk mengelola draf, artikel terbit, dan artikel dalam sampah tanpa mencampur bagian tampilan dengan pengelolaan data.',
+      solution: 'Membangun CMS Vue 3 yang terhubung ke REST API Go dan Chi dengan penyimpanan MySQL, validasi input, filter status, paginasi, penghapusan lunak, dan konfigurasi siap deployment.',
+      role: 'Full Stack Developer yang bertanggung jawab atas frontend, REST API, skema database, validasi, pengujian, CI, dokumentasi, dan deployment.',
+      techStack: ['Vue 3', 'TypeScript', 'Vite', 'Tailwind CSS', 'Axios', 'Go', 'Chi', 'MySQL', 'REST API', 'Vercel'],
+      keyFeatures: ['Pembuatan dan pengeditan artikel', 'Alur publikasi dan draf', 'Pratinjau artikel terbit', 'Filter status', 'Paginasi', 'Penghapusan lunak', 'Validasi input', 'Tampilan CMS responsif'],
+      impact: 'Menunjukkan CMS full-stack yang sudah online dengan pemisahan frontend dan backend yang jelas, perilaku API yang teruji, serta dokumentasi repository siap produksi.',
+      confidentiality: 'Proyek portofolio publik. Source code tersedia dalam repository GitHub frontend dan backend yang terpisah.',
+      categories: ['web', 'backend'],
+      workflow: ['Buat Artikel', 'Simpan Draf / Terbitkan', 'Kelola Artikel', 'Pratinjau Artikel Terbit'],
+    },
+    {
       title: 'Mini ERP Invoicing System',
       type: 'Proyek Portfolio',
       summary:
-        'A full-stack invoicing and customer management system built with Next.js, NestJS, Prisma, and PostgreSQL. The system includes JWT authentication, customer management, invoice creation with multiple items, invoice status tracking, dashboard analytics, IDR currency formatting, revenue trend visualization, invoice status chart, top customers table, recent invoices, and Swagger API documentation.',
+        'Sistem invoicing dan manajemen pelanggan full-stack yang dibangun dengan Next.js, NestJS, Prisma, dan PostgreSQL. Sistem mencakup autentikasi JWT, pengelolaan pelanggan, pembuatan invoice dengan beberapa item, pelacakan status invoice, analitik dashboard, format mata uang rupiah, grafik tren pendapatan, grafik status invoice, tabel pelanggan utama, invoice terbaru, dan dokumentasi Swagger API.',
       liveUrl: 'https://mini-erp-invoicing.vercel.app',
       githubUrl: 'https://github.com/zulfikars08/mini-erp-invoicing',
       problem:
-        'Kebutuhan invoicing bisnis kecil membutuhkan data customer terstruktur, tracking status invoice, dan ringkasan finansial tanpa spreadsheet manual.',
+        'Bisnis kecil membutuhkan data pelanggan terstruktur, pelacakan status invoice, dan ringkasan keuangan tanpa spreadsheet manual.',
       solution:
-        'Membangun Mini ERP full-stack dengan JWT authentication, REST API, modul invoice/customer, dashboard analytics, chart, table, dan Swagger API documentation.',
-      role: 'Full Stack Developer yang bertanggung jawab pada frontend, backend API, database modeling, authentication, dashboard analytics, dan deployment.',
+        'Membangun Mini ERP full-stack dengan autentikasi JWT, REST API, modul invoice dan pelanggan, analitik dashboard, grafik, tabel, dan dokumentasi Swagger API.',
+      role: 'Full Stack Developer yang bertanggung jawab atas frontend, backend API, pemodelan database, autentikasi, analitik dashboard, dan deployment.',
       techStack: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'JWT', 'REST API', 'Swagger', 'Vercel'],
       keyFeatures: [
         'Login authentication',
-        'Customer management',
-        'Invoice creation with multiple items',
-        'Invoice status management: Draft, Sent, Paid, Cancelled, Overdue',
-        'Dashboard summary',
-        'Revenue trend chart',
-        'Invoice status chart',
-        'Top customers table',
-        'Recent invoices table',
-        'IDR currency format',
-        'Swagger API documentation',
+        'Manajemen pelanggan',
+        'Pembuatan invoice dengan beberapa item',
+        'Manajemen status invoice: Draf, Terkirim, Lunas, Dibatalkan, Jatuh Tempo',
+        'Ringkasan dashboard',
+        'Grafik tren pendapatan',
+        'Grafik status invoice',
+        'Tabel pelanggan utama',
+        'Tabel invoice terbaru',
+        'Format mata uang rupiah',
+        'Dokumentasi Swagger API',
       ],
       impact:
-        'Menampilkan workflow ERP full-stack yang sudah online dengan lifecycle invoice, dashboard finansial, dan dokumentasi REST API production-ready.',
+        'Menampilkan alur ERP full-stack yang sudah online dengan siklus invoice, dashboard keuangan, dan dokumentasi REST API siap produksi.',
       confidentiality:
-        'Tidak ada credentials, environment variables, atau data customer privat yang dibuka.',
+        'Tidak ada kredensial, environment variable, atau data pelanggan pribadi yang dibuka.',
       categories: ['web', 'backend', 'erp', 'saas'],
-      workflow: ['Login', 'Kelola Customer', 'Buat Invoice', 'Review Dashboard'],
+      workflow: ['Masuk', 'Kelola Pelanggan', 'Buat Invoice', 'Tinjau Dashboard'],
     },
     {
       title: 'Platform ERP & Operasional Modular',

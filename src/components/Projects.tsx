@@ -13,6 +13,9 @@ type ProjectsText = {
   filters: Record<'all' | ProjectCategory, string>;
   viewCaseStudy: string;
   hideCaseStudy: string;
+  liveDemo: string;
+  frontendGithub: string;
+  backendGithub: string;
   labels: Record<'overview' | 'problem' | 'solution' | 'role' | 'stack' | 'features' | 'impact' | 'confidentiality' | 'workflow', string>;
 };
 
@@ -103,7 +106,7 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
                           rel="noopener noreferrer"
                           className="inline-flex rounded-2xl bg-gradient-to-r from-cyan-300 to-violet-400 px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1"
                         >
-                          Live Demo
+                          {t.liveDemo}
                         </a>
                       ) : null}
                       {project.githubUrl ? (
@@ -114,7 +117,17 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
                           rel="noopener noreferrer"
                           className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-slate-50'}
                         >
-                          GitHub
+                          {project.backendGithubUrl ? t.frontendGithub : 'GitHub'}
+                        </a>
+                      ) : null}
+                      {project.backendGithubUrl ? (
+                        <a
+                          href={project.backendGithubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-slate-50'}
+                        >
+                          {t.backendGithub}
                         </a>
                       ) : null}
                       <button
