@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { SectionHeading } from './SectionHeading';
+import type { Locale } from '@/data/dictionary';
 
 type ContactText = {
   eyebrow: string;
@@ -20,6 +21,7 @@ type ContactText = {
   linksTitle: string;
   open: string;
   whatsapp: string;
+  privacy: string;
 };
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -31,7 +33,7 @@ const initialForm = {
   message: '',
 };
 
-export function Contact({ t, theme }: { t: ContactText; theme: 'dark' | 'light' }) {
+export function Contact({ t, theme, locale }: { t: ContactText; theme: 'dark' | 'light'; locale: Locale }) {
   const isDark = theme === 'dark';
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<FormState>('idle');
@@ -102,7 +104,7 @@ export function Contact({ t, theme }: { t: ContactText; theme: 'dark' | 'light' 
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, locale, website: '' }),
       });
 
       if (!response.ok) {
@@ -129,6 +131,7 @@ export function Contact({ t, theme }: { t: ContactText; theme: 'dark' | 'light' 
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <form onSubmit={handleSubmit} className={isDark ? 'rounded-[2rem] border border-white/10 bg-slate-950/40 p-5 sm:p-7' : 'rounded-[2rem] border border-slate-200 bg-white/80 p-5 sm:p-7'} noValidate>
+            <input className="hidden" tabIndex={-1} autoComplete="off" name="website" aria-hidden="true" />
             <div className="mb-6">
               <h3 className={isDark ? 'text-2xl font-black text-white' : 'text-2xl font-black text-slate-950'}>{t.formTitle}</h3>
               <p className={isDark ? 'mt-2 text-sm leading-6 text-slate-300' : 'mt-2 text-sm leading-6 text-slate-600'}>{t.formDescription}</p>
@@ -179,6 +182,7 @@ export function Contact({ t, theme }: { t: ContactText; theme: 'dark' | 'light' 
                 {errorMessage || t.error}
               </p>
             ) : null}
+            <p className={isDark ? 'mt-4 text-xs leading-5 text-slate-400' : 'mt-4 text-xs leading-5 text-slate-600'}>{t.privacy}</p>
           </form>
 
           <aside className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">

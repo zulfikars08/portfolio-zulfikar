@@ -4,6 +4,9 @@ import { useMemo, useState } from 'react';
 import type { Locale } from '@/data/dictionary';
 import { projects, type ProjectCategory } from '@/data/projects';
 import { SectionHeading } from './SectionHeading';
+import Link from 'next/link';
+import { projectSlug } from '@/data/project-utils';
+import Image from 'next/image';
 
 type ProjectsText = {
   eyebrow: string;
@@ -27,17 +30,16 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
   const isDark = theme === 'dark';
 
   const filteredProjects = useMemo(() => {
-    return projects[locale].filter((project) => activeFilter === 'all' || (project.categories as ProjectCategory[]).includes(activeFilter));
+    const all = projects[locale];
+    const publicWork = all.filter((project) => !project.type.includes('Confidential') && !project.type.includes('Rahasia')).slice(0, 3);
+    const confidentialWork = all.filter((project) => project.type.includes('Confidential') || project.type.includes('Rahasia')).slice(0, 3);
+    return [...publicWork, ...confidentialWork].filter((project) => activeFilter === 'all' || (project.categories as ProjectCategory[]).includes(activeFilter));
   }, [activeFilter, locale]);
 
   return (
     <section id="projects" className="px-4 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} description={t.description} theme={theme} />
-
-        <div className={isDark ? 'mb-8 rounded-[1.5rem] border border-amber-300/20 bg-amber-300/10 p-5 text-sm leading-7 text-amber-50/90' : 'mb-8 rounded-[1.5rem] border border-amber-300 bg-amber-50/80 p-5 text-sm leading-7 text-amber-900'}>
-          {t.description}
-        </div>
 
         <div className="mb-8 flex flex-wrap gap-3" role="tablist" aria-label="Project filters">
           {filterKeys.map((key) => {
@@ -77,6 +79,7 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
                       <span className={isDark ? 'rounded-full border border-amber-300/25 bg-amber-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-amber-100' : 'rounded-full border border-amber-300 bg-amber-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-amber-700'}>{project.type}</span>
                       <span className="text-sm font-black text-cyan-400">0{index + 1}</span>
                     </div>
+                    {project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} className="mb-4 aspect-video w-full rounded-2xl object-cover object-top" /> : null}
                     <div className={isDark ? 'rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-300/10 via-violet-400/10 to-amber-300/10 p-4' : 'rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-50 via-violet-50 to-amber-50 p-4'}>
                       <div className="space-y-3">
                         {project.workflow.map((step, stepIndex) => (
@@ -130,15 +133,9 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
                           {t.backendGithub}
                         </a>
                       ) : null}
-                      <button
-                        id={`case-study-${index + 1}-button`}
-                        type="button"
-                        onClick={() => setOpenProject(isOpen ? null : project.title)}
-                        className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/15' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-slate-50'}
-                        aria-expanded={isOpen}
-                      >
-                        {isOpen ? t.hideCaseStudy : t.viewCaseStudy}
-                      </button>
+                      <Link href={`/projects/${projectSlug(projects.en[projects[locale].indexOf(project)].title)}?lang=${locale}`} className={isDark ? 'inline-flex rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white' : 'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-950'}>
+                        {t.viewCaseStudy} →
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -165,6 +162,7 @@ export function Projects({ t, locale, theme }: { t: ProjectsText; locale: Locale
             );
           })}
         </div>
+        <div className="mt-10 text-center"><Link href={`/projects?lang=${locale}`} className="inline-flex rounded-2xl bg-cyan-300 px-6 py-3 font-black text-slate-950">{locale === 'id' ? 'Lihat Semua Proyek' : 'View All Projects'} →</Link></div>
       </div>
     </section>
   );

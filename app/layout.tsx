@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: 'Zulfikar Airlangga Siswanto — Full Stack Developer Portfolio',
   description:
     'Professional portfolio of Zulfikar Airlangga Siswanto, a Full Stack Developer specializing in Laravel, Next.js, Flutter, PostgreSQL, ERP modules, dashboards, internal business systems, APIs, and mobile apps.',
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
   keywords: [
     'Zulfikar Airlangga Siswanto',
     'Full Stack Developer',
@@ -39,9 +41,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const person = { '@context': 'https://schema.org', '@type': 'Person', name: 'Zulfikar Airlangga Siswanto', url: 'https://portfolio-zulfikar.vercel.app', jobTitle: 'Full Stack Developer', sameAs: ['https://github.com/zulfikars08'] };
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />{children}</body>
     </html>
   );
 }

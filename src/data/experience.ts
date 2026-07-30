@@ -11,7 +11,7 @@ export const experience = {
     {
       role: 'Full Stack Developer Intern',
       company: 'PT Menara Astra',
-      period: '2022 – 2023',
+      period: 'Mar 2022 – Mar 2023',
       stack: ['Laravel', 'MySQL', 'Angular', 'HTML', 'CSS', 'JavaScript', 'Postman', 'Git', 'GitHub'],
       focus:
         'Contributed as a Full Stack Developer Intern in Astra Property’s IT and Digitalization Division, supporting web application and internal system development. Worked on Laravel and MySQL-based web portal APIs, assisted frontend development using Angular, HTML, CSS, and JavaScript, tested API endpoints with Postman, used Git/GitHub for collaboration, and participated in code reviews, pair programming, debugging, and feature enhancement.',
@@ -29,7 +29,7 @@ export const experience = {
     {
       role: 'Full Stack Developer Intern',
       company: 'PT Menara Astra',
-      period: '2022 – 2023',
+      period: 'Mar 2022 – Mar 2023',
       stack: ['Laravel', 'MySQL', 'Angular', 'HTML', 'CSS', 'JavaScript', 'Postman', 'Git', 'GitHub'],
       focus:
         'Berkontribusi sebagai Full Stack Developer Intern di Astra Property IT and Digitalization Division untuk pengembangan aplikasi web dan sistem internal. Mengerjakan web portal API berbasis Laravel dan MySQL, membantu frontend development menggunakan Angular, HTML, CSS, dan JavaScript, menguji API endpoint dengan Postman, menggunakan Git/GitHub untuk kolaborasi, serta mengikuti code review, pair programming, debugging, dan feature enhancement.',

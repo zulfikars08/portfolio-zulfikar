@@ -4,38 +4,25 @@ export type SkillCategory = {
   featured?: boolean;
 };
 
-export const skills: SkillCategory[] = [
+export const skills: Record<'en' | 'id', SkillCategory[]> = { en: [
   {
     title: 'Main Stack',
     featured: true,
     items: ['Laravel', 'Next.js', 'Flutter', 'MySQL', 'PostgreSQL'],
   },
+  { title: 'Web & Mobile', items: ['Next.js', 'React', 'Vue 3', 'Angular', 'Laravel', 'Livewire', 'Flutter', 'Tailwind CSS'] },
   {
-    title: 'Frontend',
-    items: ['HTML', 'CSS', 'JavaScript', 'Angular', 'Bootstrap', 'Tailwind CSS', 'React.js', 'Blade', 'Livewire'],
+    title: 'Backend & Data',
+    items: ['PHP', 'Go', 'NestJS', 'Fastify', 'REST API', 'MySQL', 'PostgreSQL', 'Prisma', 'Redis', 'BullMQ'],
   },
+
   {
-    title: 'Backend',
-    items: ['PHP', 'Laravel', 'REST API', 'Authentication', 'Role-Based Access Control', 'Laravel Sanctum', 'Laravel Jetstream'],
+    title: 'Delivery & Tools',
+    items: ['Git', 'GitHub', 'GitLab CI', 'Docker', 'Nginx', 'AWS Cognito', 'Postman', 'Jira'],
   },
-  {
-    title: 'Database',
-    items: ['MySQL', 'PostgreSQL', 'Data Modeling', 'Prisma ORM', 'Eloquent ORM', 'Database Migration'],
-  },
-  {
-    title: 'Cloud & Tools',
-    items: ['AWS S3', 'AWS Cognito', 'Git', 'GitHub', 'GitLab CI', 'Jira', 'Postman', 'Docker', 'Figma', 'VS Code'],
-  },
-  {
-    title: 'Mobile',
-    items: ['Flutter', 'Dart', 'GetX', 'Dio', 'Android UI', 'Mobile Scanner', 'Camera Integration'],
-  },
-  {
-    title: 'Business Systems',
-    items: ['ERP Modules', 'Warehouse Workflow', 'Sales Workflow', 'Ecommerce Workflow', 'Inventory Management', 'PDF/Excel Reports'],
-  },
-  {
-    title: 'Soft Skills',
-    items: ['Communication', 'Teamwork', 'Time Management', 'Adaptability', 'Problem Solving', 'Leadership'],
-  },
-];
+], id: [
+  { title: 'Stack Utama', featured: true, items: ['Laravel', 'Next.js', 'Flutter', 'MySQL', 'PostgreSQL'] },
+  { title: 'Web & Mobile', items: ['Next.js', 'React', 'Vue 3', 'Angular', 'Laravel', 'Livewire', 'Flutter', 'Tailwind CSS'] },
+  { title: 'Backend & Data', items: ['PHP', 'Go', 'NestJS', 'Fastify', 'REST API', 'MySQL', 'PostgreSQL', 'Prisma', 'Redis', 'BullMQ'] },
+  { title: 'Delivery & Tools', items: ['Git', 'GitHub', 'GitLab CI', 'Docker', 'Nginx', 'AWS Cognito', 'Postman', 'Jira'] },
+] };

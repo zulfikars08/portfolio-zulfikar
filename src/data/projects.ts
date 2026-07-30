@@ -16,9 +16,13 @@ export type CaseStudy = {
   confidentiality: string;
   categories: ProjectCategory[];
   workflow: string[];
+  screenshot?: string;
+  status?: string;
+  architecture?: string;
+  challenges?: string[];
 };
 
-export const projects = {
+const rawProjects = {
   en: [
     {
       title: 'Article Management System',
@@ -36,6 +40,10 @@ export const projects = {
       confidentiality: 'Public portfolio project. Source code is available in separate frontend and backend GitHub repositories.',
       categories: ['web', 'backend'],
       workflow: ['Create Article', 'Save Draft / Publish', 'Manage Posts', 'Preview Published Content'],
+      screenshot: '/projects/article-cms.png',
+      status: 'Live',
+      architecture: 'Vue 3 frontend communicates with a separate Go and Chi REST API backed by MySQL.',
+      challenges: ['Keeping draft, published, and trashed states clear', 'Separating frontend presentation from API and persistence'],
     },
     {
       title: 'Mini ERP Invoicing System',
@@ -69,6 +77,29 @@ export const projects = {
         'No credentials, environment variables, or private customer data are exposed.',
       categories: ['web', 'backend', 'erp', 'saas'],
       workflow: ['Login', 'Manage Customers', 'Create Invoice', 'Review Dashboard'],
+      screenshot: '/projects/mini-erp.png',
+      status: 'Live',
+      architecture: 'Next.js frontend communicates with a NestJS REST API using Prisma and PostgreSQL.',
+      challenges: ['Modeling invoices with multiple items', 'Presenting invoice status and financial summaries clearly'],
+    },
+    {
+      title: 'PixelQueue',
+      type: 'Portfolio Project',
+      summary: 'A single-host image-processing service with a separate Fastify API and BullMQ worker. It accepts JPG, PNG, and WebP uploads up to 20 MiB and produces bounded WebP output.',
+      githubUrl: 'https://github.com/zulfikars08/image-processing-app',
+      problem: 'Image processing needs validation, bounded resource usage, reliable retries, and safe output handling without blocking the API request.',
+      solution: 'The API validates and stores uploads, queues jobs in Redis/BullMQ, and returns an immediate 202 response. A separate Sharp worker processes jobs with retries and atomic output publication.',
+      role: 'Full Stack Developer responsible for the React web app, Fastify API, BullMQ worker, security controls, tests, CI, Docker deployment, and operations documentation.',
+      techStack: ['React', 'TypeScript', 'Fastify', 'BullMQ', 'Redis', 'Sharp', 'Nginx', 'Docker'],
+      keyFeatures: ['JPG, PNG, and WebP upload', '202 job acknowledgement', 'Job status polling', 'EXIF rotation', 'WebP output', 'Retries with exponential backoff', 'Rate limiting', 'Health and readiness checks'],
+      impact: 'Demonstrates a documented, production-hardened single-host processing flow with separate API and worker responsibilities.',
+      confidentiality: 'Public portfolio project. Source code and deployment documentation are available on GitHub.',
+      categories: ['web', 'backend'],
+      workflow: ['Upload Image', 'Queue Job', 'Process in Worker', 'Download WebP'],
+      screenshot: '/projects/pixelqueue.png',
+      status: 'Source available; demo confirmation needed',
+      architecture: 'Nginx serves the React web app and proxies the Fastify API. The API stores uploads and queues BullMQ jobs in Redis; a separate Sharp worker writes output to shared storage.',
+      challenges: ['Bounding upload, pixel, dimension, and page limits', 'Publishing output atomically while preserving retry safety', 'Keeping cleanup singleton with a Redis lock'],
     },
     {
       title: 'Modular ERP & Operations Platform',
@@ -209,6 +240,10 @@ export const projects = {
       confidentiality: 'Proyek portofolio publik. Source code tersedia dalam repository GitHub frontend dan backend yang terpisah.',
       categories: ['web', 'backend'],
       workflow: ['Buat Artikel', 'Simpan Draf / Terbitkan', 'Kelola Artikel', 'Pratinjau Artikel Terbit'],
+      screenshot: '/projects/article-cms.png',
+      status: 'Online',
+      architecture: 'Frontend Vue 3 berkomunikasi dengan REST API Go dan Chi terpisah yang menggunakan MySQL.',
+      challenges: ['Menjaga state draf, terbit, dan sampah tetap jelas', 'Memisahkan tampilan frontend dari API dan penyimpanan'],
     },
     {
       title: 'Mini ERP Invoicing System',
@@ -242,6 +277,29 @@ export const projects = {
         'Tidak ada kredensial, environment variable, atau data pelanggan pribadi yang dibuka.',
       categories: ['web', 'backend', 'erp', 'saas'],
       workflow: ['Masuk', 'Kelola Pelanggan', 'Buat Invoice', 'Tinjau Dashboard'],
+      screenshot: '/projects/mini-erp.png',
+      status: 'Online',
+      architecture: 'Frontend Next.js berkomunikasi dengan REST API NestJS menggunakan Prisma dan PostgreSQL.',
+      challenges: ['Memodelkan invoice dengan beberapa item', 'Menyajikan status invoice dan ringkasan keuangan dengan jelas'],
+    },
+    {
+      title: 'PixelQueue',
+      type: 'Proyek Portofolio',
+      summary: 'Layanan pemrosesan gambar single-host dengan API Fastify dan worker BullMQ terpisah. Sistem menerima JPG, PNG, dan WebP hingga 20 MiB dan menghasilkan WebP dengan ukuran terbatas.',
+      githubUrl: 'https://github.com/zulfikars08/image-processing-app',
+      problem: 'Pemrosesan gambar membutuhkan validasi, batas penggunaan resource, retry yang andal, dan penanganan output aman tanpa menahan request API.',
+      solution: 'API memvalidasi dan menyimpan upload, memasukkan job ke Redis/BullMQ, lalu langsung mengembalikan respons 202. Worker Sharp terpisah memproses job dengan retry dan publikasi output atomik.',
+      role: 'Full Stack Developer yang bertanggung jawab atas web React, API Fastify, worker BullMQ, kontrol keamanan, pengujian, CI, deployment Docker, dan dokumentasi operasional.',
+      techStack: ['React', 'TypeScript', 'Fastify', 'BullMQ', 'Redis', 'Sharp', 'Nginx', 'Docker'],
+      keyFeatures: ['Upload JPG, PNG, dan WebP', 'Respons job 202', 'Polling status job', 'Rotasi EXIF', 'Output WebP', 'Retry eksponensial', 'Rate limiting', 'Pemeriksaan health dan readiness'],
+      impact: 'Menunjukkan alur pemrosesan single-host yang terdokumentasi dan diperkuat untuk produksi dengan tanggung jawab API dan worker terpisah.',
+      confidentiality: 'Proyek portofolio publik. Source code dan dokumentasi deployment tersedia di GitHub.',
+      categories: ['web', 'backend'],
+      workflow: ['Upload Gambar', 'Antrekan Job', 'Proses di Worker', 'Unduh WebP'],
+      screenshot: '/projects/pixelqueue.png',
+      status: 'Source tersedia; konfirmasi demo diperlukan',
+      architecture: 'Nginx menyajikan web React dan meneruskan API Fastify. API menyimpan upload dan memasukkan job BullMQ ke Redis; worker Sharp terpisah menulis output ke shared storage.',
+      challenges: ['Membatasi ukuran upload, piksel, dimensi, dan halaman', 'Menerbitkan output secara atomik dengan retry aman', 'Menjaga cleanup singleton memakai lock Redis'],
     },
     {
       title: 'Platform ERP & Operasional Modular',
@@ -358,4 +416,10 @@ export const projects = {
       workflow: ['Registrasi Tenant', 'Assign Kamar', 'Track Pembayaran', 'Review Dashboard'],
     },
   ],
+} satisfies Record<'en' | 'id', CaseStudy[]>;
+
+const order = [1, 2, 0, ...rawProjects.en.slice(3).map((_, index) => index + 3)];
+export const projects = {
+  en: order.map((index) => rawProjects.en[index]),
+  id: order.map((index) => rawProjects.id[index]),
 } satisfies Record<'en' | 'id', CaseStudy[]>;

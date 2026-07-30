@@ -9,7 +9,7 @@ export const dictionary = {
       headline:
         'Full Stack Developer specializing in internal business systems, dashboards, ERP modules, and mobile apps using Laravel, Next.js, Flutter, and PostgreSQL.',
       description:
-        'I build practical, scalable software for business operations — from admin dashboards and APIs to warehouse workflows, sales systems, mobile apps, and reporting tools.',
+        'Full Stack Developer seeking a full-time role. I build practical software for business operations — from admin dashboards and APIs to warehouse workflows, sales systems, mobile apps, and reporting tools.',
       viewProjects: 'View Case Studies',
       downloadCv: 'Download CV',
       contactMe: 'Contact Me',
@@ -73,7 +73,7 @@ export const dictionary = {
       eyebrow: 'Contact',
       title: 'Interested in working together?',
       description:
-        'I’m open to opportunities as a Full Stack Developer, Frontend Developer, Mobile Developer, or freelance web developer.',
+        'I’m open to full-time opportunities as a Full Stack Developer, Frontend Developer, or Mobile Developer, plus selected freelance web projects.',
       availability: 'Email contact is active — use the form below or message me on WhatsApp for a faster response.',
       formTitle: 'Send me a message',
       formDescription: 'Your message will be delivered directly to my email inbox.',
@@ -96,6 +96,7 @@ export const dictionary = {
       linksTitle: 'Other ways to reach me',
       open: 'Open',
       whatsapp: 'Message me on WhatsApp',
+      privacy: 'Privacy: this form uses your details only to reply. No advertising trackers or third-party analytics are used.',
     },
     footer: 'Built with Next.js, React, TypeScript, and Tailwind CSS.',
   },
@@ -107,7 +108,7 @@ export const dictionary = {
       headline:
         'Full Stack Developer yang fokus membangun sistem bisnis internal, dashboard, modul ERP, dan aplikasi mobile menggunakan Laravel, Next.js, Flutter, dan PostgreSQL.',
       description:
-        'Saya membangun software praktis dan scalable untuk operasional bisnis — mulai dari admin dashboard, API, workflow warehouse, sistem sales, aplikasi mobile, sampai reporting tools.',
+        'Saya Full Stack Developer yang mencari posisi penuh waktu. Saya membangun perangkat lunak praktis untuk operasional bisnis — mulai dari dasbor admin dan API hingga alur gudang, sistem penjualan, aplikasi mobile, dan alat pelaporan.',
       viewProjects: 'Lihat Studi Kasus',
       downloadCv: 'Download CV',
       contactMe: 'Hubungi Saya',
@@ -171,7 +172,7 @@ export const dictionary = {
       eyebrow: 'Kontak',
       title: 'Tertarik bekerja sama?',
       description:
-        'Saya terbuka untuk peluang sebagai Full Stack Developer, Frontend Developer, Mobile Developer, atau freelance web developer.',
+        'Saya terbuka untuk peluang penuh waktu sebagai Full Stack Developer, Frontend Developer, atau Mobile Developer, serta proyek web lepas terpilih.',
       availability: 'Email contact aktif — gunakan form di bawah atau hubungi saya lewat WhatsApp untuk respons lebih cepat.',
       formTitle: 'Kirim pesan ke saya',
       formDescription: 'Pesan kamu akan langsung dikirim ke inbox email saya.',
@@ -194,6 +195,7 @@ export const dictionary = {
       linksTitle: 'Cara lain menghubungi saya',
       open: 'Buka',
       whatsapp: 'Hubungi saya lewat WhatsApp',
+      privacy: 'Privasi: data pada formulir hanya digunakan untuk membalas pesan. Tidak ada pelacak iklan atau analitik pihak ketiga.',
     },
     footer: 'Dibuat dengan Next.js, React, TypeScript, dan Tailwind CSS.',
   },

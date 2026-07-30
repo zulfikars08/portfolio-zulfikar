@@ -1,5 +1,6 @@
 import { skills } from '@/data/skills';
 import { SectionHeading } from './SectionHeading';
+import type { Locale } from '@/data/dictionary';
 
 type SkillsText = {
   eyebrow: string;
@@ -7,7 +8,7 @@ type SkillsText = {
   description: string;
 };
 
-export function Skills({ t, theme }: { t: SkillsText; theme: 'dark' | 'light' }) {
+export function Skills({ t, theme, locale }: { t: SkillsText; theme: 'dark' | 'light'; locale: Locale }) {
   const isDark = theme === 'dark';
 
   return (
@@ -15,7 +16,7 @@ export function Skills({ t, theme }: { t: SkillsText; theme: 'dark' | 'light' })
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} description={t.description} theme={theme} />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {skills.map((category) => (
+          {skills[locale].map((category) => (
             <article
               key={category.title}
               className={

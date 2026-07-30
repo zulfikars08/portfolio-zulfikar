@@ -8,22 +8,33 @@ type ContactPayload = {
   email?: string;
   subject?: string;
   message?: string;
+  website?: string;
+  locale?: 'en' | 'id';
 };
+
+const attempts = new Map<string, number[]>();
 
 export async function POST(request: Request) {
   try {
     const payload = (await request.json()) as ContactPayload;
+    const id = request.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
+    const now = Date.now();
+    const recent = (attempts.get(id) ?? []).filter((time) => now - time < 60_000);
+    if (recent.length >= 3) return NextResponse.json({ error: payload.locale === 'id' ? 'Terlalu banyak percobaan. Coba lagi nanti.' : 'Too many attempts. Try again later.' }, { status: 429 });
+    attempts.set(id, [...recent, now]);
+    if (payload.website) return NextResponse.json({ success: true });
+    const localized = (en: string, id: string) => payload.locale === 'id' ? id : en;
     const name = payload.name?.trim() ?? '';
     const email = payload.email?.trim() ?? '';
     const subject = payload.subject?.trim() ?? '';
     const message = payload.message?.trim() ?? '';
 
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
+      return NextResponse.json({ error: localized('All fields are required.', 'Semua kolom wajib diisi.') }, { status: 400 });
     }
 
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: 'Please provide a valid email address.' }, { status: 400 });
+      return NextResponse.json({ error: localized('Please provide a valid email address.', 'Masukkan alamat email yang valid.') }, { status: 400 });
     }
 
     if (message.length < 10) {

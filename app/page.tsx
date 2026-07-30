@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { About } from '@/components/About';
-import { ConfidentialDisclaimer } from '@/components/ConfidentialDisclaimer';
+
 import { Contact } from '@/components/Contact';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { Hero } from '@/components/Hero';
@@ -18,13 +18,27 @@ export default function Home() {
   const t = dictionary[locale];
 
   useEffect(() => {
+    const savedLocale = localStorage.getItem('locale') as Locale | null;
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
+    if (savedLocale === 'en' || savedLocale === 'id') setLocale(savedLocale);
+    if (savedTheme === 'dark' || savedTheme === 'light') setTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
     document.documentElement.lang = locale;
+    localStorage.setItem('locale', locale);
   }, [locale]);
+
+  useEffect(() => localStorage.setItem('theme', theme), [theme]);
 
   const isDark = theme === 'dark';
 
   return (
-    <main className={isDark ? 'min-h-screen overflow-hidden bg-slate-950 text-white' : 'min-h-screen overflow-hidden bg-slate-50 text-slate-950'}>
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950">
+        {locale === 'id' ? 'Lewati ke konten utama' : 'Skip to main content'}
+      </a>
+      <main id="main-content" className={isDark ? 'min-h-screen overflow-hidden bg-slate-950 text-white' : 'min-h-screen overflow-hidden bg-slate-50 text-slate-950'}>
       <div
         className={
           isDark
@@ -37,16 +51,17 @@ export default function Home() {
         <Navbar t={t.nav} locale={locale} setLocale={setLocale} theme={theme} setTheme={setTheme} />
         <Hero t={t.hero} theme={theme} />
         <About t={t.about} theme={theme} />
-        <Skills t={t.skills} theme={theme} />
+        <Skills t={t.skills} theme={theme} locale={locale} />
         <ExperienceTimeline t={t.experience} locale={locale} theme={theme} />
-        <ConfidentialDisclaimer t={t.disclaimer} theme={theme} />
+
         <Projects t={t.projects} locale={locale} theme={theme} />
         <WhatICanBuild t={t.build} locale={locale} theme={theme} />
-        <Contact t={t.contact} theme={theme} />
+        <Contact t={t.contact} theme={theme} locale={locale} />
         <footer className={isDark ? 'px-4 py-8 text-center text-sm text-slate-400' : 'px-4 py-8 text-center text-sm text-slate-600'}>
           © 2026 Zulfikar Airlangga Siswanto. {t.footer}
         </footer>
       </div>
-    </main>
+      </main>
+    </>
   );
 }
