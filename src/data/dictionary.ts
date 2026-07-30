@@ -2,7 +2,7 @@ export type Locale = 'en' | 'id';
 
 export const dictionary = {
   en: {
-    nav: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Case Studies', services: 'What I Build', contact: 'Contact', hire: 'Hire Me' },
+    nav: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', services: 'What I Build', contact: 'Contact', hire: 'Hire Me' },
     hero: {
       badge: 'Full Stack Developer / Programmer',
       name: 'Zulfikar Airlangga Siswanto',
@@ -102,7 +102,7 @@ export const dictionary = {
     footer: 'Built with Next.js, React, TypeScript, and Tailwind CSS.',
   },
   id: {
-    nav: { about: 'Tentang', skills: 'Keahlian', experience: 'Pengalaman', projects: 'Studi Kasus', services: 'Yang Bisa Dibuat', contact: 'Kontak', hire: 'Rekrut Saya' },
+    nav: { about: 'Tentang', skills: 'Keahlian', experience: 'Pengalaman', projects: 'Proyek', services: 'Yang Bisa Dibuat', contact: 'Kontak', hire: 'Rekrut Saya' },
     hero: {
       badge: 'Full Stack Developer / Programmer',
       name: 'Zulfikar Airlangga Siswanto',

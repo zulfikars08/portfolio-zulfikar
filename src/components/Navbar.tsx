@@ -36,7 +36,7 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
         const closest = [...visibleSections.current]
           .map((id) => document.getElementById(id))
           .filter((section): section is HTMLElement => section !== null)
-          .sort((a, b) => Math.abs(a.getBoundingClientRect().top - 120) - Math.abs(b.getBoundingClientRect().top - 120))[0];
+          .sort((a, b) => Math.abs(a.getBoundingClientRect().top - 110) - Math.abs(b.getBoundingClientRect().top - 110))[0];
 
         if (closest) setActive(closest.id);
       },
