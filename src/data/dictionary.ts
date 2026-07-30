@@ -38,7 +38,7 @@ export const dictionary = {
     projects: {
       eyebrow: 'Case Studies',
       title: 'Selected projects focused on scope, engineering, and impact.',
-      description: 'Public builds and privacy-safe professional case studies showing practical engineering work.',
+      description: 'Public projects demonstrating practical full-stack engineering, system architecture, and product delivery.',
       contributions: 'Key Contributions',
       filters: { all: 'All', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Academic' },
       viewCaseStudy: 'View Case Study',
@@ -138,7 +138,7 @@ export const dictionary = {
     projects: {
       eyebrow: 'Studi Kasus',
       title: 'Proyek pilihan yang fokus pada scope, engineering, dan impact.',
-      description: 'Proyek publik dan studi kasus profesional yang aman bagi privasi, menampilkan pekerjaan engineering praktis.',
+      description: 'Project publik yang menunjukkan kemampuan full-stack, arsitektur sistem, dan penyelesaian produk secara nyata.',
       contributions: 'Kontribusi Utama',
       filters: { all: 'Semua', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Akademik' },
       viewCaseStudy: 'Lihat Studi Kasus',

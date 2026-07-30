@@ -32,7 +32,7 @@ export function FeaturedProjects({ t, locale, theme }: { t: Text; locale: Locale
           {featured.map(({ project, slug }) => (
             <article key={project.title} className={isDark ? 'flex overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-xl shadow-black/10' : 'flex overflow-hidden rounded-[2rem] border border-slate-200 bg-white/80 shadow-xl shadow-slate-200/70'}>
               <div className="flex min-w-0 flex-1 flex-col">
-                {project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} className="aspect-video w-full object-cover object-top" /> : null}
+                {project.screenshot ? <Image src={project.screenshot} alt={project.title === 'PixelQueue' ? 'PixelQueue architecture: React frontend, Fastify API, Redis and BullMQ queue, Sharp worker, and processed output' : `${project.title} application screenshot`} width={1280} height={720} className={`aspect-video w-full ${project.title === 'PixelQueue' ? 'bg-slate-950 object-contain object-center' : 'object-cover object-top'}`} /> : null}
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className={isDark ? 'text-2xl font-black text-white' : 'text-2xl font-black text-slate-950'}>{project.title}</h3>
                   <p className={isDark ? 'mt-3 line-clamp-3 text-sm leading-6 text-slate-300' : 'mt-3 line-clamp-3 text-sm leading-6 text-slate-700'}>{project.summary}</p>
