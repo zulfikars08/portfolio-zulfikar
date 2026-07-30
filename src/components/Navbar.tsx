@@ -73,9 +73,16 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
 
   useEffect(() => {
     if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
     const close = (event: KeyboardEvent) => event.key === 'Escape' && setOpen(false);
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', close);
+    };
   }, [open]);
 
   const shell = isDark
@@ -94,9 +101,11 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-4 z-50 px-4">
-      <div className={`mx-auto max-w-7xl rounded-3xl border px-4 py-3 shadow-2xl backdrop-blur-xl sm:px-6 ${shell}`}>
-        <div className="flex items-center justify-between gap-3">
+    <>
+      {open ? <button type="button" aria-label={locale === 'id' ? 'Tutup menu navigasi' : 'Close navigation menu'} className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-[2px] lg:hidden" onClick={() => setOpen(false)} /> : null}
+      <header className="fixed left-0 right-0 top-4 z-50 px-4 max-[480px]:top-3 max-[480px]:px-4">
+      <div className={`relative mx-auto max-w-7xl rounded-3xl border px-4 py-3 shadow-2xl backdrop-blur-xl sm:px-6 max-[480px]:h-16 max-[480px]:rounded-[1.25rem] max-[480px]:py-2 ${shell}`}>
+        <div className="flex h-full items-center justify-between gap-3">
           <a id="brand-link" href="#home" className="text-lg font-black tracking-[-0.04em]">
             Zul<span className="text-cyan-400">.</span>
           </a>
@@ -108,15 +117,16 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <button type="button" onClick={() => setLocale(locale === 'en' ? 'id' : 'en')} className="rounded-full border border-current/20 px-3 py-2 text-xs font-black" aria-label={locale === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}>{locale === 'en' ? 'ID' : 'EN'}</button>
-            <button type="button" onClick={() => setTheme(isDark ? 'light' : 'dark')} className="rounded-full border border-current/20 px-3 py-2 text-sm" aria-label={locale === 'id' ? `Gunakan tema ${isDark ? 'terang' : 'gelap'}` : `Use ${isDark ? 'light' : 'dark'} theme`}>{isDark ? '☀' : '☾'}</button>
-            <button type="button" className="rounded-full border border-current/20 px-3 py-2 text-sm font-black lg:hidden" aria-expanded={open} aria-controls="mobile-navigation" aria-label={toggleLabel} onClick={() => setOpen((value) => !value)}>{open ? '×' : '☰'}</button>
+            <button type="button" onClick={() => setLocale(locale === 'en' ? 'id' : 'en')} className="rounded-full border border-current/20 px-3 py-2 text-xs font-black max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-label={locale === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}>{locale === 'en' ? 'ID' : 'EN'}</button>
+            <button type="button" onClick={() => setTheme(isDark ? 'light' : 'dark')} className="rounded-full border border-current/20 px-3 py-2 text-sm max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-label={locale === 'id' ? `Gunakan tema ${isDark ? 'terang' : 'gelap'}` : `Use ${isDark ? 'light' : 'dark'} theme`}>{isDark ? '☀' : '☾'}</button>
+            <button type="button" className="rounded-full border border-current/20 px-3 py-2 text-sm font-black lg:hidden max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-expanded={open} aria-controls="mobile-navigation" aria-label={toggleLabel} onClick={() => setOpen((value) => !value)}>{open ? '×' : '☰'}</button>
           </div>
         </div>
-        <nav id="mobile-navigation" aria-label={navLabel} hidden={!open} className="mt-3 grid gap-1 border-t border-current/10 pt-3 lg:hidden">
-          {navItems.map((item) => <a key={item.href} href={item.href} onClick={(event) => { event.preventDefault(); navigateTo(item.key); }} aria-current={active === item.key ? 'location' : undefined} className={`rounded-xl px-4 py-3 text-sm font-bold ${active === item.key ? 'bg-cyan-300 text-slate-950' : ''}`}>{t[item.key]}</a>)}
+        <nav id="mobile-navigation" aria-label={navLabel} hidden={!open} className={`absolute left-0 right-0 top-[calc(100%+0.75rem)] gap-1 rounded-[1.375rem] border p-3 shadow-2xl backdrop-blur-xl lg:hidden ${open ? 'grid' : 'hidden'} ${isDark ? 'border-white/10 bg-slate-950/95' : 'border-slate-200 bg-white/95'}`}>
+          {navItems.map((item) => <a key={item.href} href={item.href} onClick={(event) => { event.preventDefault(); navigateTo(item.key); }} aria-current={active === item.key ? 'location' : undefined} className={`flex h-11 items-center rounded-xl px-4 text-sm font-bold ${active === item.key ? 'bg-cyan-300 text-slate-950' : ''}`}>{t[item.key]}</a>)}
         </nav>
       </div>
-    </header>
+      </header>
+    </>
   );
 }
