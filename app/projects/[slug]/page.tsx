@@ -1,13 +1,80 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { projects } from '@/data/projects';
-import { projectSlug } from '@/data/project-utils';
 import type { Metadata } from 'next';
-export function generateStaticParams() { return projects.en.map((project) => ({ slug: projectSlug(project.title) })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const project = projects.en.find((item) => projectSlug(item.title) === slug); return project ? { title: `${project.title} | Zulfikar`, description: project.summary, alternates: { canonical: `/projects/${slug}` }, openGraph: { title: project.title, description: project.summary, images: project.screenshot ? [project.screenshot] : [] } } : {}; }
+import { notFound } from 'next/navigation';
+import { projectSlug } from '@/data/project-utils';
+import { projects } from '@/data/projects';
+
+export function generateStaticParams() {
+  return projects.en.map((project) => ({ slug: projectSlug(project.title) }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.en.find((item) => projectSlug(item.title) === slug);
+  return project ? {
+    title: `${project.title} | Zulfikar`,
+    description: project.summary,
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: { title: project.title, description: project.summary, images: project.screenshot ? [project.screenshot] : [] },
+  } : {};
+}
+
 export default async function ProjectDetail({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ lang?: string }> }) {
- const { slug } = await params; const locale = (await searchParams).lang === 'id' ? 'id' : 'en'; const index = projects.en.findIndex((item) => projectSlug(item.title) === slug); if (index < 0) notFound(); const project = projects[locale][index];
- const labels = locale === 'id' ? ['Masalah', 'Solusi', 'Peran Saya', 'Arsitektur', 'Hasil', 'Status', 'Catatan Kerahasiaan'] : ['Problem', 'Solution', 'My Role', 'Architecture', 'Result', 'Status', 'Confidentiality Note']; const values = [project.problem, project.solution, project.role, project.architecture, project.impact, project.status, project.confidentiality].filter(Boolean) as string[];
- return <main className="min-h-screen bg-slate-950 px-4 py-16 text-white"><article className="mx-auto max-w-5xl"><Link href={`/projects?lang=${locale}`} className="text-cyan-300">← {locale === 'id' ? 'Semua proyek' : 'All projects'}</Link><p className="mt-10 text-sm font-bold uppercase text-cyan-300">{project.type}</p><h1 className="mt-3 text-5xl font-black">{project.title}</h1><p className="mt-6 text-lg leading-8 text-slate-300">{project.summary}</p>{project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover object-top" /> : <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">Workflow</h2><ol className="mt-4 grid gap-3 sm:grid-cols-4">{project.workflow.map((step, i) => <li key={step} className="rounded-xl bg-white/5 p-3"><b>{i + 1}.</b> {step}</li>)}</ol></div>}<div className="mt-8 flex flex-wrap gap-3">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950">Live Demo</a>}{project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-white/20 px-5 py-3 font-bold">GitHub</a>}{project.backendGithubUrl && <a href={project.backendGithubUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-white/20 px-5 py-3 font-bold">Backend GitHub</a>}</div><div className="mt-10 grid gap-5 md:grid-cols-2">{values.map((value, i) => <section key={labels[i]} className="rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{labels[i]}</h2><p className="mt-3 leading-7 text-slate-300">{value}</p></section>)}</div><section className="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{locale === 'id' ? 'Fitur & Tantangan' : 'Features & Challenges'}</h2><ul className="mt-4 grid gap-2 sm:grid-cols-2">{[...project.keyFeatures, ...(project.challenges ?? [])].map(value => <li key={value} className="rounded-xl bg-white/5 p-3">{value}</li>)}</ul><div className="mt-5 flex flex-wrap gap-2">{project.techStack.map(tech => <span key={tech} className="rounded-full bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100">{tech}</span>)}</div></section></article></main>;
+  const { slug } = await params;
+  const locale = (await searchParams).lang === 'id' ? 'id' : 'en';
+  const index = projects.en.findIndex((item) => projectSlug(item.title) === slug);
+  if (index < 0) notFound();
+  const project = projects[locale][index];
+  const isId = locale === 'id';
+  const confidential = project.type.includes('Confidential') || project.type.includes('Rahasia');
+  const facts = [
+    [isId ? 'Masalah' : 'Problem', project.problem],
+    [isId ? 'Solusi' : 'Solution', project.solution],
+    [isId ? 'Peran Saya' : 'My Role', project.role],
+    [isId ? 'Arsitektur Teknis' : 'Technical Architecture', project.architecture],
+    [isId ? 'Hasil' : 'Result', project.impact],
+    [isId ? 'Status' : 'Status', project.status],
+  ].filter((item): item is [string, string] => Boolean(item[1]));
+
+  return (
+    <main className="min-h-screen bg-slate-950 px-4 py-16 text-white">
+      <article className="mx-auto max-w-5xl">
+        <Link href={`/projects?lang=${locale}`} className="font-bold text-cyan-300">← {isId ? 'Semua proyek' : 'All projects'}</Link>
+        <div className="mt-10 flex flex-wrap gap-2 text-xs font-black uppercase tracking-wider">
+          <span className="rounded-full bg-cyan-300/10 px-3 py-2 text-cyan-200">{project.type}</span>
+          <span className={`rounded-full px-3 py-2 ${confidential ? 'bg-amber-300/10 text-amber-200' : 'bg-emerald-300/10 text-emerald-200'}`}>{confidential ? (isId ? 'Rahasia' : 'Confidential') : (isId ? 'Publik' : 'Public')}</span>
+        </div>
+        <h1 className="mt-4 text-4xl font-black sm:text-5xl">{project.title}</h1>
+        <p className="mt-6 text-lg leading-8 text-slate-300">{project.summary}</p>
+
+        {project.demoVideo ? <video controls preload="metadata" className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover"><source src={project.demoVideo} /></video>
+          : project.demoGif ? <Image unoptimized src={project.demoGif} alt={`${project.title} demo`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover" />
+          : project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover object-top" />
+          : <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{isId ? 'Alur Abstrak' : 'Abstract Workflow'}</h2><ol className="mt-4 grid gap-3 sm:grid-cols-4">{project.workflow.map((step, i) => <li key={step} className="rounded-xl bg-white/5 p-3"><b>{i + 1}.</b> {step}</li>)}</ol></div>}
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          {project.liveUrl && project.status === 'Live' ? <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950">Live Demo</a> : null}
+          {project.githubUrl ? <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/20 px-5 py-3 font-bold">GitHub</a> : null}
+          {project.backendGithubUrl ? <a href={project.backendGithubUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/20 px-5 py-3 font-bold">Backend GitHub</a> : null}
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">{facts.map(([label, value]) => <Info key={label} label={label} value={value} />)}</div>
+        <List title={isId ? 'Fitur Utama' : 'Key Features'} values={project.keyFeatures} />
+        <List title={isId ? 'Tantangan Engineering' : 'Engineering Challenges'} values={project.challenges ?? []} />
+        <List title={isId ? 'Keputusan Teknis' : 'Technical Decisions'} values={project.technicalDecisions} />
+        <List title="Tech Stack" values={project.techStack} tags />
+        {confidential ? <Info label={isId ? 'Catatan Kerahasiaan' : 'Confidentiality Note'} value={project.confidentiality} className="mt-5" /> : null}
+      </article>
+    </main>
+  );
+}
+
+function Info({ label, value, className = '' }: { label: string; value: string; className?: string }) {
+  return <section className={`rounded-3xl border border-white/10 bg-white/5 p-6 ${className}`}><h2 className="font-black text-cyan-200">{label}</h2><p className="mt-3 leading-7 text-slate-300">{value}</p></section>;
+}
+
+function List({ title, values, tags = false }: { title: string; values: string[]; tags?: boolean }) {
+  if (!values.length) return null;
+  return <section className="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{title}</h2><ul className={`mt-4 ${tags ? 'flex flex-wrap gap-2' : 'grid gap-2 sm:grid-cols-2'}`}>{values.map((value) => <li key={value} className={tags ? 'rounded-full bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100' : 'rounded-xl bg-white/5 p-3'}>{value}</li>)}</ul></section>;
 }

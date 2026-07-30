@@ -17,9 +17,12 @@ export type CaseStudy = {
   categories: ProjectCategory[];
   workflow: string[];
   screenshot?: string;
+  demoVideo?: string;
+  demoGif?: string;
   status?: string;
   architecture?: string;
   challenges?: string[];
+  technicalDecisions: string[];
 };
 
 const rawProjects = {
@@ -74,11 +77,11 @@ const rawProjects = {
       impact:
         'Shows a deployed full-stack ERP workflow with clear invoice lifecycle, financial dashboard, and production-ready REST API documentation.',
       confidentiality:
-        'No credentials, environment variables, or private customer data are exposed.',
+        'Only repository-documented demo credentials are public; environment variables and private customer data are not exposed.',
       categories: ['web', 'backend', 'erp', 'saas'],
       workflow: ['Login', 'Manage Customers', 'Create Invoice', 'Review Dashboard'],
       screenshot: '/projects/mini-erp.png',
-      status: 'Live',
+      status: 'Deployment under maintenance',
       architecture: 'Next.js frontend communicates with a NestJS REST API using Prisma and PostgreSQL.',
       challenges: ['Modeling invoices with multiple items', 'Presenting invoice status and financial summaries clearly'],
     },
@@ -97,7 +100,7 @@ const rawProjects = {
       categories: ['web', 'backend'],
       workflow: ['Upload Image', 'Queue Job', 'Process in Worker', 'Download WebP'],
       screenshot: '/projects/pixelqueue.png',
-      status: 'Source available; demo confirmation needed',
+      status: 'Source Code Available — Run locally with Docker Compose',
       architecture: 'Nginx serves the React web app and proxies the Fastify API. The API stores uploads and queues BullMQ jobs in Redis; a separate Sharp worker writes output to shared storage.',
       challenges: ['Bounding upload, pixel, dimension, and page limits', 'Publishing output atomically while preserving retry safety', 'Keeping cleanup singleton with a Redis lock'],
     },
@@ -278,7 +281,7 @@ const rawProjects = {
       categories: ['web', 'backend', 'erp', 'saas'],
       workflow: ['Masuk', 'Kelola Pelanggan', 'Buat Invoice', 'Tinjau Dashboard'],
       screenshot: '/projects/mini-erp.png',
-      status: 'Online',
+      status: 'Deployment sedang dalam pemeliharaan',
       architecture: 'Frontend Next.js berkomunikasi dengan REST API NestJS menggunakan Prisma dan PostgreSQL.',
       challenges: ['Memodelkan invoice dengan beberapa item', 'Menyajikan status invoice dan ringkasan keuangan dengan jelas'],
     },
@@ -297,7 +300,7 @@ const rawProjects = {
       categories: ['web', 'backend'],
       workflow: ['Upload Gambar', 'Antrekan Job', 'Proses di Worker', 'Unduh WebP'],
       screenshot: '/projects/pixelqueue.png',
-      status: 'Source tersedia; konfirmasi demo diperlukan',
+      status: 'Source Code Tersedia — Jalankan secara lokal dengan Docker Compose',
       architecture: 'Nginx menyajikan web React dan meneruskan API Fastify. API menyimpan upload dan memasukkan job BullMQ ke Redis; worker Sharp terpisah menulis output ke shared storage.',
       challenges: ['Membatasi ukuran upload, piksel, dimensi, dan halaman', 'Menerbitkan output secara atomik dengan retry aman', 'Menjaga cleanup singleton memakai lock Redis'],
     },
@@ -416,10 +419,10 @@ const rawProjects = {
       workflow: ['Registrasi Tenant', 'Assign Kamar', 'Track Pembayaran', 'Review Dashboard'],
     },
   ],
-} satisfies Record<'en' | 'id', CaseStudy[]>;
+} satisfies Record<'en' | 'id', Omit<CaseStudy, 'technicalDecisions'>[]>;
 
 const order = [1, 2, 0, ...rawProjects.en.slice(3).map((_, index) => index + 3)];
 export const projects = {
-  en: order.map((index) => rawProjects.en[index]),
-  id: order.map((index) => rawProjects.id[index]),
+  en: order.map((index) => { const project = rawProjects.en[index] as unknown as Omit<CaseStudy, 'technicalDecisions'>; return { ...project, technicalDecisions: [project.architecture ?? project.solution] }; }),
+  id: order.map((index) => { const project = rawProjects.id[index] as unknown as Omit<CaseStudy, 'technicalDecisions'>; return { ...project, technicalDecisions: [project.architecture ?? project.solution] }; }),
 } satisfies Record<'en' | 'id', CaseStudy[]>;

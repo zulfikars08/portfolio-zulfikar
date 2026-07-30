@@ -38,7 +38,7 @@ export default function Home() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950">
         {locale === 'id' ? 'Lewati ke konten utama' : 'Skip to main content'}
       </a>
-      <main id="main-content" className={isDark ? 'min-h-screen overflow-hidden bg-slate-950 text-white' : 'min-h-screen overflow-hidden bg-slate-50 text-slate-950'}>
+      <main id="main-content" className={isDark ? 'min-h-screen overflow-x-hidden bg-slate-950 text-white' : 'min-h-screen overflow-x-hidden bg-slate-50 text-slate-950'}>
       <div
         className={
           isDark
@@ -50,11 +50,10 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar t={t.nav} locale={locale} setLocale={setLocale} theme={theme} setTheme={setTheme} />
         <Hero t={t.hero} theme={theme} />
+        <Projects t={t.projects} locale={locale} theme={theme} />
         <About t={t.about} theme={theme} />
         <Skills t={t.skills} theme={theme} locale={locale} />
         <ExperienceTimeline t={t.experience} locale={locale} theme={theme} />
-
-        <Projects t={t.projects} locale={locale} theme={theme} />
         <WhatICanBuild t={t.build} locale={locale} theme={theme} />
         <Contact t={t.contact} theme={theme} locale={locale} />
         <footer className={isDark ? 'px-4 py-8 text-center text-sm text-slate-400' : 'px-4 py-8 text-center text-sm text-slate-600'}>

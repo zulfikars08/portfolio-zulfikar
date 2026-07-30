@@ -7,9 +7,9 @@ export const dictionary = {
       badge: 'Full Stack Developer / Programmer',
       name: 'Zulfikar Airlangga Siswanto',
       headline:
-        'Full Stack Developer specializing in internal business systems, dashboards, ERP modules, and mobile apps using Laravel, Next.js, Flutter, and PostgreSQL.',
+        'Full Stack Developer building reliable business systems, dashboards, ERP modules, and REST APIs.',
       description:
-        'Full Stack Developer seeking a full-time role. I build practical software for business operations — from admin dashboards and APIs to warehouse workflows, sales systems, mobile apps, and reporting tools.',
+        'I turn operational requirements into maintainable full-stack products, from responsive interfaces and secure APIs to relational data models and deployment workflows.',
       viewProjects: 'View Case Studies',
       downloadCv: 'Download CV',
       contactMe: 'Contact Me',
@@ -22,13 +22,13 @@ export const dictionary = {
       description:
         'I have experience building internal business systems, ERP modules, dashboards, mobile apps, APIs, reporting tools, and management platforms. My focus is clean implementation, practical UX, maintainable code, and features that help teams work faster.',
       p1: 'I work across frontend, backend, mobile, and database layers using Laravel, Next.js, Flutter, MySQL, PostgreSQL, and API-driven architectures.',
-      p2: 'Some of my professional projects are confidential. For portfolio purposes, I present them as anonymized case studies focused on my role, technical scope, and business problems solved.',
+      p2: 'I value clear requirements, dependable delivery, and technical decisions that keep software useful as business workflows evolve.',
     },
     skills: {
       eyebrow: 'Skills',
       title: 'A practical stack for business-focused product development.',
       description:
-        'Grouped by what recruiters and teams usually need to evaluate: main stack, frontend, backend, database, cloud/tools, and collaboration skills.',
+        'Core technologies, supporting experience, engineering practices, and delivery tools used across full-stack projects.',
     },
     experience: {
       eyebrow: 'Experience',
@@ -37,9 +37,8 @@ export const dictionary = {
     },
     projects: {
       eyebrow: 'Case Studies',
-      title: 'Anonymized case studies focused on scope, role, and impact.',
-      description:
-        'Some of my professional projects are under confidentiality restrictions. To respect company privacy, I present them as anonymized case studies focused on my role, technical scope, and business problems solved.',
+      title: 'Selected projects focused on scope, engineering, and impact.',
+      description: 'Public builds and privacy-safe professional case studies showing practical engineering work.',
       contributions: 'Key Contributions',
       filters: { all: 'All', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Academic' },
       viewCaseStudy: 'View Case Study',
@@ -54,6 +53,8 @@ export const dictionary = {
         role: 'My Role',
         stack: 'Tech Stack',
         features: 'Key Features',
+        challenges: 'Engineering Challenges',
+        decisions: 'Technical Decisions',
         impact: 'Result / Impact',
         confidentiality: 'Confidentiality Note',
         workflow: 'Workflow',
@@ -73,7 +74,7 @@ export const dictionary = {
       eyebrow: 'Contact',
       title: 'Interested in working together?',
       description:
-        'I’m open to full-time opportunities as a Full Stack Developer, Frontend Developer, or Mobile Developer, plus selected freelance web projects.',
+        'I’m currently open to full-time opportunities as a Full Stack Developer, Frontend Developer, or Backend Developer.',
       availability: 'Email contact is active — use the form below or message me on WhatsApp for a faster response.',
       formTitle: 'Send me a message',
       formDescription: 'Your message will be delivered directly to my email inbox.',
@@ -106,9 +107,9 @@ export const dictionary = {
       badge: 'Full Stack Developer / Programmer',
       name: 'Zulfikar Airlangga Siswanto',
       headline:
-        'Full Stack Developer yang fokus membangun sistem bisnis internal, dashboard, modul ERP, dan aplikasi mobile menggunakan Laravel, Next.js, Flutter, dan PostgreSQL.',
+        'Full Stack Developer yang membangun sistem bisnis, dashboard, modul ERP, dan REST API yang andal.',
       description:
-        'Saya Full Stack Developer yang mencari posisi penuh waktu. Saya membangun perangkat lunak praktis untuk operasional bisnis — mulai dari dasbor admin dan API hingga alur gudang, sistem penjualan, aplikasi mobile, dan alat pelaporan.',
+        'Saya menerjemahkan kebutuhan operasional menjadi produk full-stack yang mudah dirawat, dari antarmuka responsif dan API aman hingga model data relasional dan alur deployment.',
       viewProjects: 'Lihat Studi Kasus',
       downloadCv: 'Download CV',
       contactMe: 'Hubungi Saya',
@@ -121,13 +122,13 @@ export const dictionary = {
       description:
         'Saya berpengalaman membangun sistem bisnis internal, modul ERP, dashboard, aplikasi mobile, API, reporting tools, dan platform manajemen. Fokus saya adalah implementasi bersih, UX praktis, kode maintainable, dan fitur yang membantu tim bekerja lebih cepat.',
       p1: 'Saya bekerja di layer frontend, backend, mobile, dan database menggunakan Laravel, Next.js, Flutter, MySQL, PostgreSQL, dan arsitektur berbasis API.',
-      p2: 'Sebagian project profesional saya bersifat confidential. Untuk portfolio, saya menampilkannya sebagai studi kasus anonim yang fokus pada role, scope teknis, dan masalah bisnis yang diselesaikan.',
+      p2: 'Saya mengutamakan kebutuhan yang jelas, delivery yang andal, dan keputusan teknis yang menjaga software tetap berguna saat alur bisnis berkembang.',
     },
     skills: {
       eyebrow: 'Keahlian',
       title: 'Stack praktis untuk pengembangan produk berbasis kebutuhan bisnis.',
       description:
-        'Dikelompokkan berdasarkan hal yang biasanya dinilai recruiter dan tim: main stack, frontend, backend, database, cloud/tools, dan skill kolaborasi.',
+        'Teknologi inti, pengalaman pendukung, praktik engineering, dan alat delivery yang digunakan dalam proyek full-stack.',
     },
     experience: {
       eyebrow: 'Pengalaman',
@@ -136,9 +137,8 @@ export const dictionary = {
     },
     projects: {
       eyebrow: 'Studi Kasus',
-      title: 'Studi kasus anonim yang fokus pada scope, role, dan impact.',
-      description:
-        'Sebagian project profesional saya berada dalam batasan confidential. Untuk menjaga privasi perusahaan, saya menampilkannya sebagai studi kasus anonim yang fokus pada role, scope teknis, dan masalah bisnis yang diselesaikan.',
+      title: 'Proyek pilihan yang fokus pada scope, engineering, dan impact.',
+      description: 'Proyek publik dan studi kasus profesional yang aman bagi privasi, menampilkan pekerjaan engineering praktis.',
       contributions: 'Kontribusi Utama',
       filters: { all: 'Semua', web: 'Web App', mobile: 'Mobile App', backend: 'Backend/API', erp: 'ERP', saas: 'SaaS', academic: 'Akademik' },
       viewCaseStudy: 'Lihat Studi Kasus',
@@ -153,6 +153,8 @@ export const dictionary = {
         role: 'Role Saya',
         stack: 'Tech Stack',
         features: 'Fitur Utama',
+        challenges: 'Tantangan Engineering',
+        decisions: 'Keputusan Teknis',
         impact: 'Hasil / Impact',
         confidentiality: 'Catatan Confidential',
         workflow: 'Workflow',
@@ -172,7 +174,7 @@ export const dictionary = {
       eyebrow: 'Kontak',
       title: 'Tertarik bekerja sama?',
       description:
-        'Saya terbuka untuk peluang penuh waktu sebagai Full Stack Developer, Frontend Developer, atau Mobile Developer, serta proyek web lepas terpilih.',
+        'Saya saat ini terbuka untuk peluang kerja penuh waktu sebagai Full Stack Developer, Frontend Developer, atau Backend Developer.',
       availability: 'Email contact aktif — gunakan form di bawah atau hubungi saya lewat WhatsApp untuk respons lebih cepat.',
       formTitle: 'Kirim pesan ke saya',
       formDescription: 'Pesan kamu akan langsung dikirim ke inbox email saya.',
