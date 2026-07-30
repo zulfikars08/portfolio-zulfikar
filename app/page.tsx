@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.lang = locale;
+    document.documentElement.lang = locale === 'id' ? 'id' : 'en';
     localStorage.setItem('locale', locale);
   }, [locale]);
 

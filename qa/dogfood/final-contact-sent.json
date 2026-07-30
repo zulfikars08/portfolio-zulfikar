@@ -1,0 +1,9 @@
+{
+  "found": true,
+  "subject": "[Portfolio] Final contact form E2E \u2014 PORTFOLIO-QA-20260730-FINAL",
+  "from": "Portfolio Contact <zairlangga55@gmail.com>",
+  "to": "zulfikarsiswanto@gmail.com",
+  "replyTo": "zulfikarsiswanto@gmail.com",
+  "messageId": "<c61f1367-e3d0-5f47-aeb9-8097362212cc@gmail.com>",
+  "body": "Name: Portfolio QA Verification\r\nEmail: zulfikarsiswanto@gmail.com\r\n\r\nMessage:\r\nSingle pre-deployment QA message. Please verify subject, sender, reply-to, and this exact message token: PORTFOLIO-QA-20260730-FINAL"
+}

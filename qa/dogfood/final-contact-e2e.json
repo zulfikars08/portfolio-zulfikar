@@ -1,0 +1,16 @@
+{
+  "token": "PORTFOLIO-QA-20260730-FINAL",
+  "payload": {
+    "name": "Portfolio QA Verification",
+    "email": "zulfikarsiswanto@gmail.com",
+    "subject": "Final contact form E2E — PORTFOLIO-QA-20260730-FINAL",
+    "message": "Single pre-deployment QA message. Please verify subject, sender, reply-to, and this exact message token: PORTFOLIO-QA-20260730-FINAL"
+  },
+  "response": {
+    "url": "http://127.0.0.1:3100/api/contact",
+    "status": 200,
+    "body": "{\"success\":true}"
+  },
+  "uiSuccess": "Thank you! Your message has been sent successfully. I will review it and reply as soon as possible.",
+  "submitDisabled": false
+}

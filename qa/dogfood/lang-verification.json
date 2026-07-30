@@ -1,0 +1,15 @@
+{
+  "default": {
+    "lang": "en",
+    "stored": "en"
+  },
+  "afterIndonesia": {
+    "lang": "id",
+    "stored": "id"
+  },
+  "afterReload": {
+    "lang": "id",
+    "stored": "id",
+    "heading": "Full Stack Developer yang membangun sistem bisnis, dashboard, modul ERP, dan REST API yang andal."
+  }
+}
