@@ -38,7 +38,7 @@ export default function Home() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950">
         {locale === 'id' ? 'Lewati ke konten utama' : 'Skip to main content'}
       </a>
-      <main id="main-content" className={isDark ? 'min-h-screen overflow-x-hidden bg-slate-950 text-white' : 'min-h-screen overflow-x-hidden bg-slate-50 text-slate-950'}>
+      <main id="main-content" className={isDark ? 'min-h-screen overflow-x-clip bg-slate-950 text-white' : 'min-h-screen overflow-x-clip bg-slate-50 text-slate-950'}>
       <div
         className={
           isDark
