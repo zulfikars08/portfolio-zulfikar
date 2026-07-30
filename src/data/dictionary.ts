@@ -10,7 +10,7 @@ export const dictionary = {
         'Full Stack Developer building reliable business systems, dashboards, ERP modules, and REST APIs.',
       description:
         'I turn operational requirements into maintainable full-stack products, from responsive interfaces and secure APIs to relational data models and deployment workflows.',
-      viewProjects: 'View Case Studies',
+      viewProjects: 'View Projects',
       downloadCv: 'Download CV',
       contactMe: 'Contact Me',
       role: 'Business Systems',
@@ -110,7 +110,7 @@ export const dictionary = {
         'Full Stack Developer yang membangun sistem bisnis, dashboard, modul ERP, dan REST API yang andal.',
       description:
         'Saya menerjemahkan kebutuhan operasional menjadi produk full-stack yang mudah dirawat, dari antarmuka responsif dan API aman hingga model data relasional dan alur deployment.',
-      viewProjects: 'Lihat Studi Kasus',
+      viewProjects: 'Lihat Proyek',
       downloadCv: 'Download CV',
       contactMe: 'Hubungi Saya',
       role: 'Sistem Bisnis',

@@ -1,0 +1,294 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "closed": {
+      "overflow": 0,
+      "heroTop": 0,
+      "h1": {
+        "top": 202,
+        "bottom": 452.875,
+        "height": 250.875,
+        "font": "32px"
+      },
+      "navHeight": 64,
+      "buttons": [
+        {
+          "left": 16,
+          "right": 304,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "height": 52
+        }
+      ],
+      "profile": {
+        "left": 16,
+        "right": 304,
+        "width": 288
+      },
+      "tagsVisible": false
+    },
+    "open": {
+      "bodyOverflow": "hidden",
+      "heroTop": 0,
+      "dropdown": {
+        "x": 17,
+        "y": 87,
+        "width": 286,
+        "height": 262,
+        "top": 87,
+        "right": 303,
+        "bottom": 349,
+        "left": 17
+      },
+      "backdrop": true
+    },
+    "escapeClosed": true,
+    "backdropClosed": true
+  },
+  {
+    "width": 360,
+    "height": 800,
+    "closed": {
+      "overflow": 0,
+      "heroTop": 0,
+      "h1": {
+        "top": 186,
+        "bottom": 405.515625,
+        "height": 219.515625,
+        "font": "32px"
+      },
+      "navHeight": 64,
+      "buttons": [
+        {
+          "left": 16,
+          "right": 344,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 344,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 344,
+          "height": 52
+        }
+      ],
+      "profile": {
+        "left": 16,
+        "right": 344,
+        "width": 328
+      },
+      "tagsVisible": false
+    },
+    "open": {
+      "bodyOverflow": "hidden",
+      "heroTop": 0,
+      "dropdown": {
+        "x": 17,
+        "y": 87,
+        "width": 326,
+        "height": 262,
+        "top": 87,
+        "right": 343,
+        "bottom": 349,
+        "left": 17
+      },
+      "backdrop": true
+    },
+    "escapeClosed": true,
+    "backdropClosed": true
+  },
+  {
+    "width": 375,
+    "height": 812,
+    "closed": {
+      "overflow": 0,
+      "heroTop": 0,
+      "h1": {
+        "top": 186,
+        "bottom": 405.515625,
+        "height": 219.515625,
+        "font": "32px"
+      },
+      "navHeight": 64,
+      "buttons": [
+        {
+          "left": 16,
+          "right": 359,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 181.5,
+          "height": 52
+        },
+        {
+          "left": 193.5,
+          "right": 359,
+          "height": 52
+        }
+      ],
+      "profile": {
+        "left": 16,
+        "right": 359,
+        "width": 343
+      },
+      "tagsVisible": false
+    },
+    "open": {
+      "bodyOverflow": "hidden",
+      "heroTop": 0,
+      "dropdown": {
+        "x": 17,
+        "y": 87,
+        "width": 341,
+        "height": 262,
+        "top": 87,
+        "right": 358,
+        "bottom": 349,
+        "left": 17
+      },
+      "backdrop": true
+    },
+    "escapeClosed": true,
+    "backdropClosed": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "closed": {
+      "overflow": 0,
+      "heroTop": 0,
+      "h1": {
+        "top": 186,
+        "bottom": 413.390625,
+        "height": 227.390625,
+        "font": "33.15px"
+      },
+      "navHeight": 64,
+      "buttons": [
+        {
+          "left": 16,
+          "right": 374,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 189,
+          "height": 52
+        },
+        {
+          "left": 201,
+          "right": 374,
+          "height": 52
+        }
+      ],
+      "profile": {
+        "left": 16,
+        "right": 374,
+        "width": 358
+      },
+      "tagsVisible": false
+    },
+    "open": {
+      "bodyOverflow": "hidden",
+      "heroTop": 0,
+      "dropdown": {
+        "x": 17,
+        "y": 87,
+        "width": 356,
+        "height": 262,
+        "top": 87,
+        "right": 373,
+        "bottom": 349,
+        "left": 17
+      },
+      "backdrop": true
+    },
+    "escapeClosed": true,
+    "backdropClosed": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "closed": {
+      "overflow": 0,
+      "heroTop": 0,
+      "h1": {
+        "top": 186,
+        "bottom": 436.6875,
+        "height": 250.6875,
+        "font": "36.55px"
+      },
+      "navHeight": 64,
+      "buttons": [
+        {
+          "left": 16,
+          "right": 414,
+          "height": 52
+        },
+        {
+          "left": 16,
+          "right": 209,
+          "height": 52
+        },
+        {
+          "left": 221,
+          "right": 414,
+          "height": 52
+        }
+      ],
+      "profile": {
+        "left": 16,
+        "right": 414,
+        "width": 398
+      },
+      "tagsVisible": false
+    },
+    "open": {
+      "bodyOverflow": "hidden",
+      "heroTop": 0,
+      "dropdown": {
+        "x": 17,
+        "y": 87,
+        "width": 396,
+        "height": 262,
+        "top": 87,
+        "right": 413,
+        "bottom": 349,
+        "left": 17
+      },
+      "backdrop": true
+    },
+    "escapeClosed": true,
+    "backdropClosed": true
+  },
+  {
+    "locale": "id",
+    "id": {
+      "overflow": 0,
+      "h1": {
+        "x": 16,
+        "y": 186,
+        "width": 343,
+        "height": 219.515625,
+        "top": 186,
+        "right": 359,
+        "bottom": 405.515625,
+        "left": 16
+      },
+      "text": "Full Stack Developer yang membangun sistem bisnis, dashboard, modul ERP, dan REST API yang andal."
+    }
+  }
+]
