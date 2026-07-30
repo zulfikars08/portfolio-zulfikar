@@ -15,7 +15,7 @@ export function ExperienceTimeline({ t, locale, theme }: { t: ExperienceText; lo
     <section id="experience" className="px-4 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} description={t.description} theme={theme} />
-        <div className="relative grid gap-6 lg:grid-cols-2">
+        <div className="relative grid gap-6 md:grid-cols-2">
           {experience[locale].map((item, index) => (
             <article key={`${item.company}-${item.period}`} className={isDark ? 'relative rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/10 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/40 sm:p-8' : 'relative rounded-[2rem] border border-slate-200 bg-white/75 p-6 shadow-2xl shadow-slate-200/70 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/70 sm:p-8'}>
               <div className="mb-5 flex items-center justify-between gap-4">

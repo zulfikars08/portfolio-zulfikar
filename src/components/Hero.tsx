@@ -52,7 +52,7 @@ export function Hero({ t, theme }: { t: HeroText; theme: 'dark' | 'light' }) {
         <aside className={isDark ? 'relative z-10 max-w-full rounded-[2rem] border border-white/10 bg-white/[0.07] p-5 shadow-2xl shadow-black/30 backdrop-blur-xl transition hover:-translate-y-2 sm:p-7 max-[480px]:rounded-[1.5rem] max-[480px]:p-3' : 'relative z-10 max-w-full rounded-[2rem] border border-slate-200 bg-white/70 p-5 shadow-2xl shadow-slate-300/50 backdrop-blur-xl transition hover:-translate-y-2 sm:p-7 max-[480px]:rounded-[1.5rem] max-[480px]:p-3'}>
           <div className="rounded-[1.5rem] bg-gradient-to-br from-cyan-300/20 via-violet-400/20 to-amber-300/10 p-4 sm:p-6 max-[480px]:rounded-[1.25rem] max-[480px]:p-3">
             <div className={isDark ? 'relative h-80 overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-950/45 max-[480px]:h-64 max-[480px]:rounded-2xl' : 'relative h-80 overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white/60 max-[480px]:h-64 max-[480px]:rounded-2xl'}>
-              <Image src={zulfikarPhoto} alt="Zulfikar Airlangga Siswanto" fill priority sizes="(max-width: 480px) calc(100vw - 64px), (max-width: 1024px) 90vw, 420px" className="object-cover object-top" />
+              <Image src={zulfikarPhoto} alt="Zulfikar Airlangga Siswanto" fill priority sizes="(max-width: 480px) calc(100vw - 64px), (max-width: 1024px) 90vw, 420px" className="object-cover object-top sm:object-[48%_48%] lg:object-[48%_62%] xl:object-[48%_54%]" />
             </div>
             <div className="mt-6 grid grid-cols-2 gap-3 max-[480px]:mt-3 max-[320px]:hidden">
               <div className={isDark ? 'rounded-2xl border border-white/10 bg-white/10 p-4' : 'rounded-2xl border border-slate-200 bg-white/70 p-4'}>

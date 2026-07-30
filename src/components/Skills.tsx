@@ -21,7 +21,7 @@ export function Skills({ t, theme, locale }: { t: SkillsText; theme: 'dark' | 'l
               key={category.title}
               className={
                 category.featured
-                  ? 'rounded-[1.75rem] border border-cyan-300/40 bg-gradient-to-br from-cyan-300/15 to-violet-400/15 p-6 shadow-xl shadow-cyan-500/10 backdrop-blur transition hover:-translate-y-2 md:col-span-2 xl:col-span-2'
+                  ? 'rounded-[1.75rem] border border-cyan-300/40 bg-gradient-to-br from-cyan-300/15 to-violet-400/15 p-6 shadow-xl shadow-cyan-500/10 backdrop-blur transition hover:-translate-y-2 xl:col-span-2'
                   : isDark
                     ? 'rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/[0.09]'
                     : 'rounded-[1.75rem] border border-slate-200 bg-white/75 p-6 shadow-xl shadow-slate-200/70 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/70 hover:bg-white'

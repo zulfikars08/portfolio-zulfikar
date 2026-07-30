@@ -20,9 +20,9 @@ export function SelectedConfidentialProjects({ locale, theme }: { locale: Locale
           description={locale === 'id' ? 'Scope dan kontribusi teknis ditampilkan tanpa identitas perusahaan, data internal, atau aturan bisnis privat.' : 'Technical scope and contributions are shown without company identities, internal data, or private business rules.'}
           theme={theme}
         />
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {selected.map(({ project, index }) => (
-            <article key={project.title} className={isDark ? 'rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-6' : 'rounded-[1.75rem] border border-slate-200 bg-white/80 p-6'}>
+            <article key={project.title} className={`${isDark ? 'rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-6' : 'rounded-[1.75rem] border border-slate-200 bg-white/80 p-6'} md:last:col-span-2 lg:last:col-span-1`}>
               <p className={isDark ? 'text-xs font-black uppercase tracking-[0.16em] text-amber-200' : 'text-xs font-black uppercase tracking-[0.16em] text-amber-700'}>{project.type}</p>
               <h3 className={isDark ? 'mt-4 text-xl font-black text-white' : 'mt-4 text-xl font-black text-slate-950'}>{project.title}</h3>
               <p className={isDark ? 'mt-3 line-clamp-3 text-sm leading-6 text-slate-300' : 'mt-3 line-clamp-3 text-sm leading-6 text-slate-700'}>{project.summary}</p>

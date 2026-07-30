@@ -1,0 +1,387 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "deviceScaleFactor": 1,
+    "isMobile": true,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "288px",
+        "experience": "288px",
+        "skills": "288px",
+        "confidential": "288px"
+      },
+      "profile": {
+        "x": 42,
+        "y": 870.828125,
+        "width": 236,
+        "height": 254,
+        "top": 870.828125,
+        "right": 278,
+        "bottom": 1124.828125,
+        "left": 42
+      },
+      "article": {
+        "x": 17,
+        "y": 3083.578125,
+        "width": 286,
+        "height": 160.875,
+        "top": 3083.578125,
+        "right": 303,
+        "bottom": 3244.453125,
+        "left": 17
+      },
+      "pixel": {
+        "x": 17,
+        "y": 2420.703125,
+        "width": 286,
+        "height": 160.875,
+        "top": 2420.703125,
+        "right": 303,
+        "bottom": 2581.578125,
+        "left": 17
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 375,
+    "height": 812,
+    "deviceScaleFactor": 1,
+    "isMobile": true,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "343px",
+        "experience": "343px",
+        "skills": "343px",
+        "confidential": "343px"
+      },
+      "profile": {
+        "x": 42,
+        "y": 759.46875,
+        "width": 291,
+        "height": 254,
+        "top": 759.46875,
+        "right": 333,
+        "bottom": 1013.46875,
+        "left": 42
+      },
+      "article": {
+        "x": 17,
+        "y": 2896.09375,
+        "width": 341,
+        "height": 191.8125,
+        "top": 2896.09375,
+        "right": 358,
+        "bottom": 3087.90625,
+        "left": 17
+      },
+      "pixel": {
+        "x": 17,
+        "y": 2312.28125,
+        "width": 341,
+        "height": 191.8125,
+        "top": 2312.28125,
+        "right": 358,
+        "bottom": 2504.09375,
+        "left": 17
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 700,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "668px",
+        "experience": "668px",
+        "skills": "668px",
+        "confidential": "668px"
+      },
+      "profile": {
+        "x": 70,
+        "y": 852,
+        "width": 560,
+        "height": 318,
+        "top": 852,
+        "right": 630,
+        "bottom": 1170,
+        "left": 70
+      },
+      "article": {
+        "x": 17,
+        "y": 3158.25,
+        "width": 666,
+        "height": 374.625,
+        "top": 3158.25,
+        "right": 683,
+        "bottom": 3532.875,
+        "left": 17
+      },
+      "pixel": {
+        "x": 17,
+        "y": 2471.625,
+        "width": 666,
+        "height": 374.625,
+        "top": 2471.625,
+        "right": 683,
+        "bottom": 2846.25,
+        "left": 17
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "356px 356px",
+        "experience": "356px 356px",
+        "skills": "358px 358px",
+        "confidential": "358px 358px"
+      },
+      "profile": {
+        "x": 70,
+        "y": 852,
+        "width": 628,
+        "height": 318,
+        "top": 852,
+        "right": 698,
+        "bottom": 1170,
+        "left": 70
+      },
+      "article": {
+        "x": 17,
+        "y": 2388.125,
+        "width": 734,
+        "height": 412.875,
+        "top": 2388.125,
+        "right": 751,
+        "bottom": 2801,
+        "left": 17
+      },
+      "pixel": {
+        "x": 397,
+        "y": 1785,
+        "width": 354,
+        "height": 199.125,
+        "top": 1785,
+        "right": 751,
+        "bottom": 1984.125,
+        "left": 397
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "382px 382px",
+        "experience": "382px 382px",
+        "skills": "384px 384px",
+        "confidential": "384px 384px"
+      },
+      "profile": {
+        "x": 70,
+        "y": 852,
+        "width": 680,
+        "height": 318,
+        "top": 852,
+        "right": 750,
+        "bottom": 1170,
+        "left": 70
+      },
+      "article": {
+        "x": 17,
+        "y": 2402.75,
+        "width": 786,
+        "height": 442.125,
+        "top": 2402.75,
+        "right": 803,
+        "bottom": 2844.875,
+        "left": 17
+      },
+      "pixel": {
+        "x": 423,
+        "y": 1785,
+        "width": 380,
+        "height": 213.75,
+        "top": 1785,
+        "right": 803,
+        "bottom": 1998.75,
+        "left": 423
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "314.656px 314.672px 314.656px",
+        "experience": "484px 484px",
+        "skills": "486px 486px",
+        "confidential": "317.328px 317.328px 317.344px"
+      },
+      "profile": {
+        "x": 627.75,
+        "y": 420,
+        "width": 326.25,
+        "height": 318,
+        "top": 420,
+        "right": 954,
+        "bottom": 738,
+        "left": 627.75
+      },
+      "article": {
+        "x": 694.328125,
+        "y": 1687,
+        "width": 312.65625,
+        "height": 175.859375,
+        "top": 1687,
+        "right": 1006.984375,
+        "bottom": 1862.859375,
+        "left": 694.328125
+      },
+      "pixel": {
+        "x": 355.65625,
+        "y": 1687,
+        "width": 312.671875,
+        "height": 175.875,
+        "top": 1687,
+        "right": 668.328125,
+        "bottom": 1862.875,
+        "left": 355.65625
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "metrics": {
+      "overflow": 0,
+      "brokenImages": [],
+      "grids": {
+        "featured": "410.656px 410.672px 410.656px",
+        "experience": "628px 628px",
+        "skills": "305px 305px 305px 305px",
+        "confidential": "413.328px 413.328px 413.344px"
+      },
+      "profile": {
+        "x": 847.265625,
+        "y": 319,
+        "width": 458.734375,
+        "height": 318,
+        "top": 319,
+        "right": 1306,
+        "bottom": 637,
+        "left": 847.265625
+      },
+      "article": {
+        "x": 950.328125,
+        "y": 1461,
+        "width": 408.65625,
+        "height": 229.859375,
+        "top": 1461,
+        "right": 1358.984375,
+        "bottom": 1690.859375,
+        "left": 950.328125
+      },
+      "pixel": {
+        "x": 515.65625,
+        "y": 1461,
+        "width": 408.671875,
+        "height": 229.875,
+        "top": 1461,
+        "right": 924.328125,
+        "bottom": 1690.875,
+        "left": 515.65625
+      },
+      "summaries": [
+        "A full-stack invoicing system with customer management, multi-item invoices, JWT authentication, and dashboard analytics.",
+        "Deployment under maintenance",
+        "An asynchronous image-processing service with a Fastify API, BullMQ queue, Redis, and a separate Sharp worker.",
+        "Source Code Available — Run locally with Docker Compose",
+        "A Vue and Go CMS for creating, drafting, publishing, previewing, and soft-deleting articles.",
+        "Live"
+      ]
+    },
+    "errors": []
+  }
+]

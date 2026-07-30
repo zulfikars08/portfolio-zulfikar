@@ -1,0 +1,38 @@
+{
+  "directHash": {
+    "url": "http://127.0.0.1:3100/#projects",
+    "scrollY": 1143,
+    "sectionTop": 110,
+    "activeAnchor": "#projects"
+  },
+  "refresh": {
+    "before": {
+      "url": "http://127.0.0.1:3100/#projects",
+      "scrollY": 1143,
+      "sectionTop": 110,
+      "activeAnchor": "#projects"
+    },
+    "after": {
+      "url": "http://127.0.0.1:3100/#projects",
+      "scrollY": 1143,
+      "sectionTop": 110,
+      "activeAnchor": "#projects"
+    }
+  },
+  "mobileMenu": {
+    "url": "http://127.0.0.1:3100/",
+    "beforeTop": 0,
+    "afterTop": 0,
+    "scrollY": 0,
+    "bodyOverflow": "hidden",
+    "expanded": "true",
+    "activeAnchor": null,
+    "escapeClosed": true
+  },
+  "navigationClick": {
+    "url": "http://127.0.0.1:3100/#projects",
+    "scrollY": 1143,
+    "sectionTop": 110,
+    "activeAnchor": "#projects"
+  }
+}
