@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import type { Locale } from '@/data/dictionary';
 
 const navItems = [
-  { key: 'about', href: '#about' },
-  { key: 'experience', href: '#experience' },
   { key: 'projects', href: '#projects' },
+  { key: 'experience', href: '#experience' },
   { key: 'skills', href: '#skills' },
+  { key: 'about', href: '#about' },
   { key: 'contact', href: '#contact' },
 ] as const;
 
@@ -29,7 +29,10 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
       (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(entry.target.id)),
       { rootMargin: '-25% 0px -65%' },
     );
-    document.querySelectorAll('section[id]').forEach((section) => observer.observe(section));
+    navItems.forEach(({ href }) => {
+      const section = document.querySelector(href);
+      if (section) observer.observe(section);
+    });
     return () => observer.disconnect();
   }, []);
 
