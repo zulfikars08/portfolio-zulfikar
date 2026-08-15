@@ -103,11 +103,11 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
   return (
     <>
       {open ? <button type="button" aria-label={locale === 'id' ? 'Tutup menu navigasi' : 'Close navigation menu'} className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-[2px] lg:hidden" onClick={() => setOpen(false)} /> : null}
-      <header className="fixed left-0 right-0 top-4 z-50 px-4 max-[480px]:top-3 max-[480px]:px-4">
-      <div className={`relative mx-auto max-w-7xl rounded-md border px-4 py-3 sm:px-6 max-[480px]:h-16 max-[480px]:py-2 ${shell}`}>
+      <header className="fixed left-0 right-0 top-3 z-50 px-3 sm:top-4 sm:px-4">
+      <div className={`relative mx-auto max-w-7xl rounded-xl border px-4 py-2.5 shadow-xl shadow-slate-950/10 backdrop-blur-xl sm:px-6 ${shell}`}>
         <div className="flex h-full items-center justify-between gap-3">
           <a id="brand-link" href="#home" className="text-lg font-black tracking-[-0.04em]">
-            Zul<span className="text-cyan-400">.</span>
+            Zulfikar<span className="text-emerald-400">.</span>
           </a>
           <nav aria-label={navLabel} className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
@@ -117,9 +117,9 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <button type="button" onClick={() => setLocale(locale === 'en' ? 'id' : 'en')} className="rounded-full border border-current/20 px-3 py-2 text-xs font-black max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-label={locale === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}>{locale === 'en' ? 'ID' : 'EN'}</button>
-            <button type="button" onClick={() => setTheme(isDark ? 'light' : 'dark')} className="rounded-full border border-current/20 px-3 py-2 text-sm max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-label={locale === 'id' ? `Gunakan tema ${isDark ? 'terang' : 'gelap'}` : `Use ${isDark ? 'light' : 'dark'} theme`}>{isDark ? '☀' : '☾'}</button>
-            <button type="button" className="rounded-full border border-current/20 px-3 py-2 text-sm font-black lg:hidden max-[480px]:h-10 max-[480px]:w-10 max-[480px]:p-0" aria-expanded={open} aria-controls="mobile-navigation" aria-label={toggleLabel} onClick={() => setOpen((value) => !value)}>{open ? '×' : '☰'}</button>
+            <button type="button" onClick={() => setLocale(locale === 'en' ? 'id' : 'en')} className="min-h-11 min-w-11 rounded-md border border-current/20 px-3 text-xs font-bold" aria-label={locale === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}>{locale === 'en' ? 'ID' : 'EN'}</button>
+            <button type="button" onClick={() => setTheme(isDark ? 'light' : 'dark')} className="min-h-11 min-w-11 rounded-md border border-current/20 px-3 text-sm" aria-label={locale === 'id' ? `Gunakan tema ${isDark ? 'terang' : 'gelap'}` : `Use ${isDark ? 'light' : 'dark'} theme`}>{isDark ? '☀' : '☾'}</button>
+            <button type="button" className="min-h-11 min-w-11 rounded-md border border-current/20 px-3 text-sm font-bold lg:hidden" aria-expanded={open} aria-controls="mobile-navigation" aria-label={toggleLabel} onClick={() => setOpen((value) => !value)}>{open ? '×' : '☰'}</button>
           </div>
         </div>
         <nav id="mobile-navigation" aria-label={navLabel} hidden={!open} className={`absolute left-0 right-0 top-[calc(100%+0.75rem)] gap-1 rounded-[1.375rem] border p-3 shadow-2xl backdrop-blur-xl lg:hidden ${open ? 'grid' : 'hidden'} ${isDark ? 'border-white/10 bg-slate-950/95' : 'border-slate-200 bg-white/95'}`}>

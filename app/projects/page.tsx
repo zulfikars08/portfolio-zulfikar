@@ -15,11 +15,12 @@ export default async function ProjectIndex({ searchParams }: { searchParams: Pro
   const isId = locale === 'id';
 
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-16 text-white">
-      <div className="mx-auto max-w-6xl">
-        <Link href={`/?lang=${locale}`} className="font-bold text-cyan-300">← {isId ? 'Beranda' : 'Home'}</Link>
-        <h1 className="mt-8 text-4xl font-black sm:text-5xl">{isId ? 'Semua Proyek' : 'All Projects'}</h1>
-        <p className="mt-4 max-w-3xl leading-7 text-slate-300">
+    <main className="site-shell min-h-screen px-4 py-16">
+      <div className="mx-auto max-w-7xl">
+        <Link href={`/?lang=${locale}`} className="inline-flex min-h-11 items-center font-semibold text-emerald-400">← {isId ? 'Beranda' : 'Home'}</Link>
+        <p className="mt-12 font-mono text-xs font-bold uppercase tracking-[.18em] text-emerald-400">{isId ? 'Portofolio proyek' : 'Project portfolio'}</p>
+        <h1 className="mt-4 max-w-3xl text-4xl font-black tracking-[-.04em] sm:text-6xl">{isId ? 'Semua Proyek' : 'All Projects'}</h1>
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
           {isId ? 'Proyek publik ditampilkan lebih dahulu. Studi kasus profesional ditampilkan secara anonim untuk menjaga kerahasiaan.' : 'Public work appears first. Professional case studies are anonymized to protect confidential information.'}
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">

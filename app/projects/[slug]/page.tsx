@@ -38,14 +38,14 @@ export default async function ProjectDetail({ params, searchParams }: { params: 
   ].filter((item): item is [string, string] => Boolean(item[1]));
 
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-16 text-white">
+    <main className="site-shell min-h-screen px-4 py-16">
       <article className="mx-auto max-w-5xl">
-        <Link href={`/projects?lang=${locale}`} className="font-bold text-cyan-300">← {isId ? 'Semua proyek' : 'All projects'}</Link>
+        <Link href={`/projects?lang=${locale}`} className="inline-flex min-h-11 items-center font-semibold text-emerald-400">← {isId ? 'Semua proyek' : 'All projects'}</Link>
         <div className="mt-10 flex flex-wrap gap-2 text-xs font-black uppercase tracking-wider">
           <span className="rounded-full bg-cyan-300/10 px-3 py-2 text-cyan-200">{project.type}</span>
           <span className={`rounded-full px-3 py-2 ${confidential ? 'bg-amber-300/10 text-amber-200' : 'bg-emerald-300/10 text-emerald-200'}`}>{confidential ? (isId ? 'Rahasia' : 'Confidential') : (isId ? 'Publik' : 'Public')}</span>
         </div>
-        <h1 className="mt-4 text-4xl font-black sm:text-5xl">{project.title}</h1>
+        <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-.04em] sm:text-6xl">{project.title}</h1>
         <p className="mt-6 text-lg leading-8 text-slate-300">{project.summary}</p>
 
         {project.demoVideo ? <video controls preload="metadata" className="mt-8 aspect-video w-full rounded-md border border-white/15 object-cover"><source src={project.demoVideo} /></video>

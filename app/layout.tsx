@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
+import { IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+
+const sans = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-sans', weight: ['400', '500', '600', '700'] });
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://portfolio-zulfikar.vercel.app'),
@@ -43,8 +47,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const person = { '@context': 'https://schema.org', '@type': 'Person', name: 'Zulfikar Airlangga Siswanto', url: 'https://portfolio-zulfikar.vercel.app', jobTitle: 'Full Stack Developer', sameAs: ['https://github.com/zulfikars08'] };
   return (
-    <html lang="en">
-      <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${sans.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />{children}</body>
     </html>
   );
 }

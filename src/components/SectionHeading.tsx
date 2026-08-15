@@ -11,7 +11,7 @@ export function SectionHeading({ eyebrow, title, description, centered = false, 
 
   return (
     <div className={centered ? 'mx-auto mb-12 max-w-3xl text-center' : 'mb-12 max-w-3xl'}>
-      <p className={isDark ? 'mb-4 text-xs font-bold uppercase tracking-[0.22em] text-cyan-300' : 'mb-4 text-xs font-bold uppercase tracking-[0.22em] text-cyan-700'}>
+      <p className={isDark ? 'mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-emerald-300' : 'mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-emerald-700'}>
         {eyebrow}
       </p>
       <h2 className={isDark ? 'text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl' : 'text-3xl font-black tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-5xl'}>
