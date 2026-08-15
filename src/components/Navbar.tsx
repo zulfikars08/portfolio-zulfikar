@@ -86,8 +86,8 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
   }, [open]);
 
   const shell = isDark
-    ? 'border-white/10 bg-slate-950/90 text-white shadow-black/30'
-    : 'border-slate-200 bg-white/95 text-slate-950 shadow-slate-200/70';
+    ? 'border-white/15 bg-slate-950 text-white'
+    : 'border-slate-300 bg-stone-50 text-slate-950';
   const navLabel = locale === 'id' ? 'Navigasi utama' : 'Primary navigation';
   const toggleLabel = locale === 'id' ? (open ? 'Tutup menu' : 'Buka menu') : open ? 'Close menu' : 'Open menu';
 
@@ -104,14 +104,14 @@ export function Navbar({ t, locale, setLocale, theme, setTheme }: NavbarProps) {
     <>
       {open ? <button type="button" aria-label={locale === 'id' ? 'Tutup menu navigasi' : 'Close navigation menu'} className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-[2px] lg:hidden" onClick={() => setOpen(false)} /> : null}
       <header className="fixed left-0 right-0 top-4 z-50 px-4 max-[480px]:top-3 max-[480px]:px-4">
-      <div className={`relative mx-auto max-w-7xl rounded-3xl border px-4 py-3 shadow-2xl backdrop-blur-xl sm:px-6 max-[480px]:h-16 max-[480px]:rounded-[1.25rem] max-[480px]:py-2 ${shell}`}>
+      <div className={`relative mx-auto max-w-7xl rounded-md border px-4 py-3 sm:px-6 max-[480px]:h-16 max-[480px]:py-2 ${shell}`}>
         <div className="flex h-full items-center justify-between gap-3">
           <a id="brand-link" href="#home" className="text-lg font-black tracking-[-0.04em]">
             Zul<span className="text-cyan-400">.</span>
           </a>
           <nav aria-label={navLabel} className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} onClick={(event) => { event.preventDefault(); navigateTo(item.key); }} aria-current={active === item.key ? 'location' : undefined} className={`rounded-full px-3 py-2 text-xs font-semibold transition ${active === item.key ? 'bg-cyan-300 text-slate-950' : isDark ? 'text-slate-300 hover:bg-white/10 hover:text-white' : 'text-slate-600 hover:bg-slate-950/5 hover:text-slate-950'}`}>
+              <a key={item.href} href={item.href} onClick={(event) => { event.preventDefault(); navigateTo(item.key); }} aria-current={active === item.key ? 'location' : undefined} className={`border-b px-3 py-2 text-xs font-semibold transition ${active === item.key ? 'border-cyan-400 text-cyan-400' : isDark ? 'border-transparent text-slate-300 hover:text-white' : 'border-transparent text-slate-600 hover:text-slate-950'}`}>
                 {t[item.key]}
               </a>
             ))}

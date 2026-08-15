@@ -26,12 +26,12 @@ export default async function ProjectIndex({ searchParams }: { searchParams: Pro
           {projects[locale].map((project, index) => {
             const confidential = project.type.includes('Confidential') || project.type.includes('Rahasia');
             return (
-              <article key={project.title} className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <article key={project.title} className="overflow-hidden rounded-md border border-white/15 bg-slate-900">
                 {project.screenshot && !confidential ? (
                   <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} className="aspect-video w-full object-cover object-top" />
                 ) : (
-                  <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-cyan-300/10 via-violet-400/10 to-amber-300/10 p-6 text-center">
-                    <span className="rounded-full border border-white/15 bg-slate-950/60 px-4 py-2 text-sm font-bold">{isId ? 'Ilustrasi alur abstrak' : 'Abstract workflow illustration'}</span>
+                  <div className="flex aspect-video items-center justify-center border-b border-white/15 bg-slate-950 p-6 text-center">
+                    <span className="border-l-2 border-cyan-400 pl-4 text-sm font-bold">{isId ? 'Ilustrasi alur abstrak' : 'Abstract workflow illustration'}</span>
                   </div>
                 )}
                 <div className="p-6">

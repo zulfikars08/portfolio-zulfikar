@@ -38,12 +38,12 @@ export function FeaturedProjects({ t, locale, theme }: { t: Text; locale: Locale
   });
 
   return (
-    <section id="projects" className="px-4 py-20 sm:py-24">
+    <section id="projects" className="border-b border-slate-500/20 px-4 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow={locale === 'id' ? 'Proyek Publik Unggulan' : 'Featured Public Projects'} title={t.title} description={t.description} theme={theme} />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featured.map(({ project, slug }, index) => (
-            <article key={project.title} className={`${isDark ? 'flex overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-xl shadow-black/10' : 'flex overflow-hidden rounded-[2rem] border border-slate-200 bg-white/80 shadow-xl shadow-slate-200/70'} md:last:col-span-2 lg:last:col-span-1`}>
+            <article key={project.title} className={`${isDark ? 'flex overflow-hidden rounded-md border border-white/15 bg-slate-900' : 'flex overflow-hidden rounded-md border border-slate-300 bg-white'} md:last:col-span-2 lg:last:col-span-1`}>
               <div className="flex min-w-0 flex-1 flex-col">
                 {index === 1 ? <><Image src="/projects/pixelqueue-architecture-compact.svg" alt="PixelQueue flow: React, Fastify, Redis and BullMQ, Sharp, and output" width={1280} height={720} className="aspect-video w-full bg-slate-950 object-contain xl:hidden" /><Image src="/projects/pixelqueue-architecture.svg" alt="PixelQueue architecture: React frontend, Fastify API, Redis and BullMQ queue, Sharp worker, and processed output" width={1280} height={720} className="hidden aspect-video w-full bg-slate-950 object-contain xl:block" /></> : index === 2 ? <Image src="/projects/article-cms-card.webp" alt={`${project.title} posts management interface`} width={1280} height={720} className="aspect-video w-full object-cover object-top" /> : project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} className="aspect-video w-full object-cover object-top" /> : null}
                 <div className="flex flex-1 flex-col p-6">

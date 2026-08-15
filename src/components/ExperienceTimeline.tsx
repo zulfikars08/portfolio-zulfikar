@@ -12,14 +12,14 @@ export function ExperienceTimeline({ t, locale, theme }: { t: ExperienceText; lo
   const isDark = theme === 'dark';
 
   return (
-    <section id="experience" className="px-4 py-20 sm:py-24">
+    <section id="experience" className="border-b border-slate-500/20 px-4 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} description={t.description} theme={theme} />
         <div className="relative grid gap-6 md:grid-cols-2">
           {experience[locale].map((item, index) => (
-            <article key={`${item.company}-${item.period}`} className={isDark ? 'relative rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/10 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/40 sm:p-8' : 'relative rounded-[2rem] border border-slate-200 bg-white/75 p-6 shadow-2xl shadow-slate-200/70 backdrop-blur transition hover:-translate-y-2 hover:border-cyan-300/70 sm:p-8'}>
+            <article key={`${item.company}-${item.period}`} className={isDark ? 'relative rounded-md border border-white/15 bg-slate-900 p-6 sm:p-8' : 'relative rounded-md border border-slate-300 bg-white p-6 sm:p-8'}>
               <div className="mb-5 flex items-center justify-between gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 to-violet-400 text-sm font-black text-slate-950">0{index + 1}</span>
+                <span className="flex h-11 w-11 items-center justify-center border border-cyan-400 text-sm font-black text-cyan-400">0{index + 1}</span>
                 <span className={isDark ? 'rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-bold text-slate-300' : 'rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-bold text-slate-600'}>{item.period}</span>
               </div>
               <h3 className={isDark ? 'text-2xl font-black text-white' : 'text-2xl font-black text-slate-950'}>{item.role}</h3>

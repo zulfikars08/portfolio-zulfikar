@@ -38,16 +38,8 @@ export default function Home() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950">
         {locale === 'id' ? 'Lewati ke konten utama' : 'Skip to main content'}
       </a>
-      <main id="main-content" className={isDark ? 'min-h-screen overflow-x-clip bg-slate-950 text-white' : 'min-h-screen overflow-x-clip bg-slate-50 text-slate-950'}>
-      <div
-        className={
-          isDark
-            ? 'pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(34,211,238,0.18),transparent_28rem),radial-gradient(circle_at_80%_0%,rgba(139,92,246,0.2),transparent_30rem),linear-gradient(135deg,#020617_0%,#0f172a_50%,#111827_100%)]'
-            : 'pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(6,182,212,0.16),transparent_28rem),radial-gradient(circle_at_80%_0%,rgba(124,58,237,0.14),transparent_30rem),linear-gradient(135deg,#f8fafc_0%,#eef2ff_50%,#ecfeff_100%)]'
-        }
-      />
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
-      <div className="relative z-10">
+      <main id="main-content" className={isDark ? 'min-h-screen overflow-x-clip bg-slate-950 text-white' : 'min-h-screen overflow-x-clip bg-stone-50 text-slate-950'}>
+      <div>
         <Navbar t={t.nav} locale={locale} setLocale={setLocale} theme={theme} setTheme={setTheme} />
         <Hero t={t.hero} theme={theme} />
         <FeaturedProjects t={t.projects} locale={locale} theme={theme} />

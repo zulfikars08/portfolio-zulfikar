@@ -57,8 +57,8 @@ export function Contact({ t, theme, locale }: { t: ContactText; theme: 'dark' | 
   const inputClass = useMemo(
     () =>
       isDark
-        ? 'mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10'
-        : 'mt-2 w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-200/50',
+        ? 'mt-2 w-full rounded-md border border-white/15 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300'
+        : 'mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-cyan-600',
     [isDark],
   );
 
@@ -121,7 +121,7 @@ export function Contact({ t, theme, locale }: { t: ContactText; theme: 'dark' | 
 
   return (
     <section id="contact" className="px-4 py-20 sm:py-24">
-      <div className={isDark ? 'mx-auto max-w-7xl rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-cyan-400/15 via-violet-500/15 to-white/[0.04] p-6 shadow-2xl shadow-black/20 backdrop-blur sm:p-10 lg:p-12' : 'mx-auto max-w-7xl rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-cyan-100 via-violet-100 to-white p-6 shadow-2xl shadow-slate-300/60 backdrop-blur sm:p-10 lg:p-12'}>
+      <div className={isDark ? 'mx-auto max-w-7xl rounded-md border border-white/15 bg-slate-900 p-6 sm:p-10 lg:p-12' : 'mx-auto max-w-7xl rounded-md border border-slate-300 bg-white p-6 sm:p-10 lg:p-12'}>
         <SectionHeading centered eyebrow={t.eyebrow} title={t.title} description={t.description} theme={theme} />
 
         <div className={isDark ? 'mx-auto mb-8 flex max-w-3xl items-center gap-3 rounded-3xl border border-emerald-300/25 bg-emerald-400/10 px-5 py-4 text-sm font-bold text-emerald-100' : 'mx-auto mb-8 flex max-w-3xl items-center gap-3 rounded-3xl border border-emerald-300 bg-emerald-50 px-5 py-4 text-sm font-bold text-emerald-800'} role="status">
@@ -166,7 +166,7 @@ export function Contact({ t, theme, locale }: { t: ContactText; theme: 'dark' | 
               id="contact-submit-button"
               type="submit"
               disabled={status === 'loading'}
-              className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-500 px-6 py-4 font-black text-slate-950 shadow-2xl shadow-cyan-500/20 transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-cyan-400 px-6 py-4 font-black text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
             >
               {status === 'loading' ? t.sending : t.submit}
             </button>
@@ -194,7 +194,7 @@ export function Contact({ t, theme, locale }: { t: ContactText; theme: 'dark' | 
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={isDark ? 'group rounded-3xl border border-white/10 bg-slate-950/40 p-5 text-left transition hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/10' : 'group rounded-3xl border border-slate-200 bg-white/75 p-5 text-left transition hover:-translate-y-2 hover:border-cyan-300/70 hover:bg-white'}
+                className={isDark ? 'group rounded-md border border-white/15 bg-slate-950 p-5 text-left transition hover:border-cyan-300/60' : 'group rounded-md border border-slate-300 bg-stone-50 p-5 text-left transition hover:border-cyan-600'}
               >
                 <span className={isDark ? 'text-xs font-black uppercase tracking-[0.2em] text-cyan-200' : 'text-xs font-black uppercase tracking-[0.2em] text-cyan-700'}>{link.label}</span>
                 <strong className={isDark ? 'mt-3 block break-words text-sm text-white' : 'mt-3 block break-words text-sm text-slate-950'}>{link.value}</strong>

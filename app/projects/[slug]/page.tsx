@@ -48,10 +48,10 @@ export default async function ProjectDetail({ params, searchParams }: { params: 
         <h1 className="mt-4 text-4xl font-black sm:text-5xl">{project.title}</h1>
         <p className="mt-6 text-lg leading-8 text-slate-300">{project.summary}</p>
 
-        {project.demoVideo ? <video controls preload="metadata" className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover"><source src={project.demoVideo} /></video>
-          : project.demoGif ? <Image unoptimized src={project.demoGif} alt={`${project.title} demo`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover" />
-          : project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-3xl border border-white/10 object-cover object-top" />
-          : <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{isId ? 'Alur Abstrak' : 'Abstract Workflow'}</h2><ol className="mt-4 grid gap-3 sm:grid-cols-4">{project.workflow.map((step, i) => <li key={step} className="rounded-xl bg-white/5 p-3"><b>{i + 1}.</b> {step}</li>)}</ol></div>}
+        {project.demoVideo ? <video controls preload="metadata" className="mt-8 aspect-video w-full rounded-md border border-white/15 object-cover"><source src={project.demoVideo} /></video>
+          : project.demoGif ? <Image unoptimized src={project.demoGif} alt={`${project.title} demo`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-md border border-white/15 object-cover" />
+          : project.screenshot ? <Image src={project.screenshot} alt={`${project.title} application screenshot`} width={1280} height={720} priority className="mt-8 aspect-video w-full rounded-md border border-white/15 object-cover object-top" />
+          : <div className="mt-8 rounded-md border border-white/15 bg-slate-900 p-6"><h2 className="font-black text-cyan-200">{isId ? 'Alur Abstrak' : 'Abstract Workflow'}</h2><ol className="mt-4 grid gap-3 sm:grid-cols-4">{project.workflow.map((step, i) => <li key={step} className="border-l border-cyan-400 p-3"><b>{i + 1}.</b> {step}</li>)}</ol></div>}
 
         <div className="mt-8 flex flex-wrap gap-3">
           {project.liveUrl && project.status === 'Live' ? <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950">Live Demo</a> : null}
@@ -71,10 +71,10 @@ export default async function ProjectDetail({ params, searchParams }: { params: 
 }
 
 function Info({ label, value, className = '' }: { label: string; value: string; className?: string }) {
-  return <section className={`rounded-3xl border border-white/10 bg-white/5 p-6 ${className}`}><h2 className="font-black text-cyan-200">{label}</h2><p className="mt-3 leading-7 text-slate-300">{value}</p></section>;
+  return <section className={`rounded-md border border-white/15 bg-slate-900 p-6 ${className}`}><h2 className="font-black text-cyan-200">{label}</h2><p className="mt-3 leading-7 text-slate-300">{value}</p></section>;
 }
 
 function List({ title, values, tags = false }: { title: string; values: string[]; tags?: boolean }) {
   if (!values.length) return null;
-  return <section className="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6"><h2 className="font-black text-cyan-200">{title}</h2><ul className={`mt-4 ${tags ? 'flex flex-wrap gap-2' : 'grid gap-2 sm:grid-cols-2'}`}>{values.map((value) => <li key={value} className={tags ? 'rounded-full bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100' : 'rounded-xl bg-white/5 p-3'}>{value}</li>)}</ul></section>;
+  return <section className="mt-5 rounded-md border border-white/15 bg-slate-900 p-6"><h2 className="font-black text-cyan-200">{title}</h2><ul className={`mt-4 ${tags ? 'flex flex-wrap gap-2' : 'grid gap-2 sm:grid-cols-2'}`}>{values.map((value) => <li key={value} className={tags ? 'border border-white/15 px-3 py-2 text-sm text-cyan-100' : 'border-l border-white/20 p-3'}>{value}</li>)}</ul></section>;
 }
